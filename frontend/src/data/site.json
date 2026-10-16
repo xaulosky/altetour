@@ -1,0 +1,29 @@
+{
+  "name": "Alte Tour",
+  "tagline": "Conectamos personas. Conectamos empresas. Conectamos destinos.",
+  "location": "Los Ángeles, Región del Biobío, Chile",
+  "contact": "Teresa Alarcón",
+  "phone": "+56 9 9219 5711",
+  "whatsapp": "56992195711",
+  "instagram": "altetour",
+  "contactInstagram": "teresaconecta",
+  "metrics": [
+    {
+      "value": "30+",
+      "label": "años de trayectoria"
+    },
+    {
+      "value": "20.000+",
+      "label": "pasajeros"
+    },
+    {
+      "value": "70+",
+      "label": "países visitados"
+    },
+    {
+      "value": "40+",
+      "label": "misiones comerciales"
+    }
+  ],
+  "contactRole": "Fundadora · Alte Tour"
+}

@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import site from '../data/site.json';
+import programs from '../data/programs.json';
+import { header, footer } from '../lib/render.mjs';
+const { title, description } = Astro.props;
+const indexable = import.meta.env.PUBLIC_SITE_INDEXABLE === 'true';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const heroNav = Astro.url.pathname === '/' || Astro.url.pathname === '/nosotros/' || (Astro.url.pathname.startsWith('/viajes/') && Astro.url.pathname !== '/viajes/');
+---
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#082c40" />
+  <meta name="description" content={description} />
+  <meta name="robots" content={indexable ? 'index,follow' : 'noindex,nofollow'} />
+  <title>{title}</title>
+  {indexable && <link rel="canonical" href={canonical} />}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:locale" content="es_CL" />
+  <meta property="og:image" content={new URL('/assets/patagonia.webp', Astro.site)} />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+</head>
+<body class:list={{ 'has-hero-nav': heroNav }}>
+  <Fragment set:html={header(site)} />
+  <main id="main" tabindex="-1"><slot /></main>
+  <Fragment set:html={footer(site,programs)} />
+  <script>
+    import { boot } from '../scripts/site.js';
+    boot();
+  </script>
+</body>
+</html>

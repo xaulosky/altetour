@@ -1,0 +1,18 @@
+{
+  "name": "altetour-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "preview": "astro preview --host 0.0.0.0",
+    "preview:portable": "node ../scripts/build-preview.mjs"
+  },
+  "dependencies": {
+    "astro": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "method": "Built-in image_gen",
+  "images": [
+    {
+      "key": "istanbul",
+      "prompt": "Photorealistic editorial panorama of Istanbul Bosphorus at golden hour; detailed skyline on right, calm space on left; natural blue and gold palette; no text, logos or collage.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-820dbe2d-2f0e-4114-af37-1f35b94296eb.png"
+    },
+    {
+      "key": "capadocia",
+      "prompt": "Use case: photorealistic-natural. Asset: high resolution 3:2 landscape destination photography for a premium travel website. A breathtaking wide landscape travel photograph of Cappadocia Turkey at dawn, layered rose and ochre fairy chimney rock valleys, a small number of realistic hot air balloons floating in pale blue and peach sky, expansive depth, natural light, fine rock textures. Foreground ridges and central open valley. Not Istanbul. Exceptional sharp detail, photographic realism, restrained natural color, no text, logos, collage, borders or watermark. Illustrative image of destination, no specific hotel or tour service implied.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-ea1558d5-c937-4396-a328-71287679f17e.png"
+    },
+    {
+      "key": "pamukkale",
+      "prompt": "Use case: photorealistic-natural. Asset: high resolution 3:2 landscape destination photography for a premium travel website. Pamukkale Turkey white travertine terraces filled with pale turquoise water in clear soft morning sunlight, gently curving mineral pools leading into distant green valley, natural realistic geography, intricate chalk texture. Wide elevated landscape composition. No buildings or balloons. Exceptional sharp detail, photographic realism, restrained natural color, no text, logos, collage, borders or watermark. Illustrative image of destination, no specific hotel or tour service implied.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-dba4860c-3a07-42eb-803e-81df0ef46b73.png"
+    },
+    {
+      "key": "egeo",
+      "prompt": "Use case: photorealistic-natural. Asset: high resolution 3:2 landscape destination photography for a premium travel website. Turkish Aegean coast at Kusadasi, turquoise cove, pale stone Mediterranean seaside houses with terracotta roofs and trees along a small harbor, distant coastal hills, gentle late afternoon sun, sophisticated editorial travel photography, tranquil authentic landscape, wide composition. No mosques, ruins or balloons. Exceptional sharp detail, photographic realism, restrained natural color, no text, logos, collage, borders or watermark. Illustrative image of destination, no specific hotel or tour service implied.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-102cf16f-8477-40a6-82bd-e54e3443abf7.png"
+    },
+    {
+      "key": "galata",
+      "prompt": "Use case: photorealistic-natural. Asset: high resolution landscape 3:2 travel editorial photograph for premium Alte Tour website. Istanbul Galata Tower seen above the layered terracotta rooftops of Beyoglu, iconic single cylindrical medieval stone tower with conical roof, warm afternoon light, Bosphorus faintly in background, moderately elevated viewpoint, beautiful detailed historic urban fabric. Centered tower with generous surrounding rooftops, landscape frame for a travel program card. Crisp rich natural detail, restrained saturation, elegant blue and warm gold color harmony, photographic realism. No text, logos, watermarks, borders, collage, invented buildings or montage. Illustrative destination scene.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-7e51f0c6-d991-4597-9ae8-41b1211a93a1.png"
+    },
+    {
+      "key": "biobio",
+      "prompt": "Use case: photorealistic-natural. Asset: high resolution landscape 3:2 travel editorial photograph for premium Alte Tour website. Nature of Chile's Biobio region: broad view of Laja waterfalls cascading into a blue green river gorge, basalt rocks, lush Chilean vegetation, soft late afternoon light, waterfall mist, calm inviting scenery. Landscape composition, no people or buildings. Crisp rich natural detail, restrained saturation, elegant blue and warm gold color harmony, photographic realism. No text, logos, watermarks, borders, collage, invented buildings or montage. Illustrative destination scene.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-31d4f305-de50-4fd0-898f-f103e6acfb22.png"
+    },
+    {
+      "key": "patagonia",
+      "prompt": "Use case: photorealistic-natural. Asset: high resolution landscape 3:2 travel editorial photograph for premium Alte Tour website. Patagonia Chile Torres del Paine granite peaks across a deep turquoise lake, native golden grasses in foreground, natural dramatic mountain clouds with patches of warm morning sunlight, realistic spectacular wilderness. Broad panoramic landscape with mountain peaks on right half and quieter lake and clouds on left for website hero text. Crisp rich natural detail, restrained saturation, elegant blue and warm gold color harmony, photographic realism. No text, logos, watermarks, borders, collage, invented buildings or montage. Illustrative destination scene.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-90f6b805-c09c-45af-b63d-3f537fc63ed8.png"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "adapter": "JSON local, no MySQL",
+  "checks": [
+    {
+      "test": "CSRF token disponible",
+      "result": "PASS"
+    },
+    {
+      "test": "POST sin CSRF rechazado",
+      "result": "PASS"
+    },
+    {
+      "test": "Validación del correo en servidor",
+      "result": "PASS"
+    },
+    {
+      "test": "Consentimiento obligatorio en servidor",
+      "result": "PASS"
+    },
+    {
+      "test": "Consulta persistida",
+      "result": "PASS"
+    },
+    {
+      "test": "Reintento idempotente sin duplicar",
+      "result": "PASS"
+    },
+    {
+      "test": "Misma clave con distinto contenido rechazada",
+      "result": "PASS"
+    },
+    {
+      "test": "Programa inválido rechazado",
+      "result": "PASS"
+    },
+    {
+      "test": "Límite de tamaño",
+      "result": "PASS"
+    },
+    {
+      "test": "La API pública no filtra notas internas",
+      "result": "PASS"
+    },
+    {
+      "test": "CSV protegido por autenticación",
+      "result": "PASS"
+    },
+    {
+      "test": "Pantalla de acceso",
+      "result": "PASS"
+    },
+    {
+      "test": "Credenciales inválidas rechazadas",
+      "result": "PASS"
+    },
+    {
+      "test": "Acceso administrador válido",
+      "result": "PASS"
+    },
+    {
+      "test": "Escape de HTML en datos de consultas",
+      "result": "PASS"
+    },
+    {
+      "test": "Cambio de estado autenticado",
+      "result": "PASS"
+    },
+    {
+      "test": "CSV autenticado exportado",
+      "result": "PASS"
+    },
+    {
+      "test": "CSV neutraliza prefijos de fórmula en teléfono",
+      "result": "PASS"
+    },
+    {
+      "test": "Panel del programa disponible",
+      "result": "PASS"
+    },
+    {
+      "test": "Edición del precio persistida",
+      "result": "PASS"
+    },
+    {
+      "test": "Exportación refleja precio actualizado",
+      "result": "PASS"
+    },
+    {
+      "test": "Eliminación exige autenticación y confirmación",
+      "result": "PASS"
+    },
+    {
+      "test": "Consulta eliminada del almacenamiento activo",
+      "result": "PASS"
+    },
+    {
+      "test": "Cierre de sesión",
+      "result": "PASS"
+    },
+    {
+      "test": "Sesión cerrada sin acceso a exportación",
+      "result": "PASS"
+    }
+  ]
+}

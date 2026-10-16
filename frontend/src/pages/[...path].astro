@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import site from '../data/site.json';
+import programs from '../data/programs.json';
+import { getPages } from '../lib/render.mjs';
+export function getStaticPaths() {
+  return Object.entries(getPages(site, programs)).map(([url, page]) => ({
+    params: { path: url === '/' ? undefined : url.replace(/^\/|\/$/g, '') },
+    props: { page },
+  }));
+}
+const { page } = Astro.props;
+---
+<Layout title={page.title} description={page.description}>
+  <Fragment set:html={page.html} />
+</Layout>

@@ -1,0 +1,200 @@
+[
+  {
+    "id": "turquia-2027",
+    "slug": "turquia-2027",
+    "title": "Turquía Imbatible",
+    "subtitle": "Historia, cultura y paisajes increíbles.",
+    "category": "Internacional",
+    "status": "published",
+    "departure": "2027-05-07",
+    "return": "2027-05-18",
+    "tourStart": "2027-05-08",
+    "tourEnd": "2027-05-17",
+    "days": 10,
+    "nights": 9,
+    "tier": "Platino",
+    "currency": "USD",
+    "prices": {
+      "double": 3750,
+      "single": 4015,
+      "triple": 3750
+    },
+    "localFeePerNight": 5,
+    "contact": "Teresa Alarcón",
+    "image": "/assets/galata.webp",
+    "poster": "/assets/turquia-2027.jpg",
+    "route": [
+      "Estambul",
+      "Ankara",
+      "Capadocia",
+      "Pamukkale",
+      "Selçuk",
+      "Izmir / Kuşadası",
+      "Chios",
+      "Bursa",
+      "Estambul"
+    ],
+    "includes": [
+      "Pasaje aéreo Santiago / Estambul / Santiago vía Turkish.",
+      "Traslados Aeropuerto de Estambul / Hotel / Aeropuerto de Estambul.",
+      "03 noches en Estambul con desayuno, al inicio del circuito.",
+      "02 noches en Capadocia con cena y desayuno.",
+      "01 noche en Pamukkale con cena y desayuno.",
+      "02 noches en Izmir o Kuşadası con cena y desayuno.",
+      "01 noche en Estambul con desayuno, al final del circuito.",
+      "Entradas y visitas a los monumentos mencionados en el programa, con las excepciones indicadas.",
+      "Desayunos diarios + 5 cenas.",
+      "Guía profesional de habla hispana.",
+      "Autos con aire acondicionado durante el itinerario.",
+      "Impuestos hoteleros y aéreos."
+    ],
+    "excludes": [
+      "Tasa local de servicios obligatoria: USD 5 por pasajero por noche, pagada en destino.",
+      "Tours opcionales.",
+      "Gastos personales y bebidas en las comidas.",
+      "Servicios no especificados.",
+      "Seguros personales (robo, enfermedad, pérdidas y daños personales, entre otros)."
+    ],
+    "insurance": [
+      {
+        "label": "Hasta 74 años",
+        "price": 60
+      },
+      {
+        "label": "De 75 a 84 años",
+        "price": 90
+      }
+    ],
+    "daysList": [
+      {
+        "number": 1,
+        "date": "08/05/2027",
+        "title": "Llegada a Estambul",
+        "intro": "El comienzo de una nueva historia.",
+        "activities": [
+          "Llegada al Aeropuerto de Estambul (IST), desembarco, migración y retiro de equipaje.",
+          "Encuentro en la puerta 9 de salida de IST, según el programa.",
+          "Traslado al hotel y tiempo libre para descansar."
+        ]
+      },
+      {
+        "number": 2,
+        "date": "09/05/2027",
+        "title": "Estambul y el Bósforo",
+        "intro": "Las Perlas del Cuerno de Oro y Bósforo.",
+        "activities": [
+          "Desayuno. Salida aproximada a las 08:00, a confirmar por el guía.",
+          "Barrios de Balat y Fener, vistas del Cuerno de Oro y Catedral de San Jorge.",
+          "Mezquita de Solimán El Magnífico y Bazar de las Especias.",
+          "Almuerzo en restaurante de comidas típicas y paseo en barco por el Bósforo.",
+          "El programa menciona también el recorrido gastronómico «Sabores de Estambul»."
+        ]
+      },
+      {
+        "number": 3,
+        "date": "10/05/2027",
+        "title": "Joyas de Constantinopla",
+        "intro": "Un encuentro con la historia de Estambul.",
+        "activities": [
+          "Desayuno. Salida aproximada a las 08:00, a confirmar por el guía.",
+          "Hipódromo Romano y Mezquita Azul.",
+          "Vista panorámica de Santa Sofía: entradas no incluidas.",
+          "Almuerzo en restaurante de comidas típicas.",
+          "Palacio Topkapi, iglesia de Aya Irini y Gran Bazar."
+        ]
+      },
+      {
+        "number": 4,
+        "date": "11/05/2027",
+        "title": "Estambul · Ankara · Capadocia",
+        "intro": "Rumbo a los paisajes de Anatolia.",
+        "activities": [
+          "Desayuno tipo lunch-box y salida aproximada a las 06:00.",
+          "Visita panorámica de Ankara y Mausoleo de Atatürk.",
+          "Contemplación del Lago Salado y visita a un Caravanserai.",
+          "Traslado a Capadocia, cena en el hotel y alojamiento."
+        ]
+      },
+      {
+        "number": 5,
+        "date": "12/05/2027",
+        "title": "Capadocia",
+        "intro": "Valles, ciudades subterráneas y paisajes inolvidables.",
+        "activities": [
+          "Desayuno y cena en el hotel. Salida aproximada a las 08:00.",
+          "El itinerario menciona un paseo en globo. Confirmar con Alte Tour su inclusión en la tarifa y condiciones antes de contratar.",
+          "Museo al Aire Libre de Göreme, valles de Capadocia y vistas de rocas volcánicas.",
+          "Ciudad subterránea, centro de alfombras y centro de piedras preciosas.",
+          "Opcionales indicados: Noche Turca (USD 80) y Jeep Safari (USD 80)."
+        ]
+      },
+      {
+        "number": 6,
+        "date": "13/05/2027",
+        "title": "Capadocia · Pamukkale",
+        "intro": "El Castillo de Algodón.",
+        "activities": [
+          "Desayuno y salida aproximada a las 06:00.",
+          "Visitas a Hierápolis y al Castillo de Algodón.",
+          "Visita a un outlet de productos textiles de fabricación local.",
+          "Cena en el hotel y alojamiento."
+        ]
+      },
+      {
+        "number": 7,
+        "date": "14/05/2027",
+        "title": "Pamukkale · Selçuk · Izmir / Kuşadası",
+        "intro": "Una nueva mirada al Egeo.",
+        "activities": [
+          "Desayuno y salida aproximada a las 08:00.",
+          "Visita a la Casa de María y panorámica de Selçuk.",
+          "Visita a un showroom de cuero.",
+          "Cena en el hotel y alojamiento en Izmir o Kuşadası, según disponibilidad y temporada."
+        ]
+      },
+      {
+        "number": 8,
+        "date": "15/05/2027",
+        "title": "Chios, un paraíso griego",
+        "intro": "Una jornada al otro lado del Egeo.",
+        "activities": [
+          "Desayuno. Traslado al puerto de Çeşme entre las 06:00 y las 07:00, a confirmar.",
+          "Trámite de migración y ferry a Chios.",
+          "Visitas a Mesta, Pyrgi y los molinos de viento de Tabakika.",
+          "Tiempo en una playa del Egeo.",
+          "Regreso en ferry a Çeşme y traslado al hotel. Cena y alojamiento."
+        ]
+      },
+      {
+        "number": 9,
+        "date": "16/05/2027",
+        "title": "Izmir / Kuşadası · Bursa · Estambul",
+        "intro": "El regreso a la ciudad de los dos continentes.",
+        "activities": [
+          "Desayuno y salida aproximada a las 08:00.",
+          "Visita panorámica de Bursa, Mezquita Verde y Mausoleo Verde.",
+          "Traslado y alojamiento en Estambul."
+        ]
+      },
+      {
+        "number": 10,
+        "date": "17/05/2027",
+        "title": "Salida de Estambul",
+        "intro": "Hasta la próxima aventura.",
+        "activities": [
+          "Desayuno.",
+          "Traslado al aeropuerto IST y vuelo de regreso.",
+          "El vuelo de regreso llega a Santiago el 18 de mayo, según el programa."
+        ]
+      }
+    ],
+    "editorialWarnings": [
+      "Confirmar inclusión y condiciones del paseo en globo.",
+      "Aprobar condiciones de cancelación y contratación antes de publicar el contrato.",
+      "El documento contiene menciones a Travelaway; confirmar la identidad y responsabilidades del operador.",
+      "Confirmar alcance de AC-60 y coberturas de cancelación; no prometer reembolso por todo evento.",
+      "Confirmar hoteles y servicios de Chios. La excursión figura en el itinerario.",
+      "Los almuerzos de días 2 y 3 figuran en el itinerario, pero no en el resumen de alimentación: confirmar alcance comercial."
+    ]
+  }
+]

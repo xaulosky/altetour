@@ -1,0 +1,30 @@
+{
+  "method": "Built-in image_gen",
+  "images": [
+    {
+      "key": "misiones",
+      "prompt": "Use case: photorealistic-natural. Asset: high resolution 3:2 landscape editorial image for premium Chilean Alte Tour travel website. An editorial photograph of a small group of four Latin American business travelers, women and men age 35 to 55, having a friendly professional conversation in a contemporary international airport departure lounge. Candid natural gestures, no handshakes, anatomically correct hands, a carry-on suitcase and notebooks, expansive terminal windows, aircraft subtly visible beyond, soft daylight. Elegant casual business clothing in navy, cream and earth tones. Medium-wide shot showing the environment, not a portrait of employees. Illustrative business travel scene, no identifiable real company, no visible document text or airline branding. Sophisticated realistic travel photography, crisp detail, restrained natural color. No watermark, text, borders, collages, montage or artificial HDR.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-561bbe2f-cd43-4468-9589-276de8abd712.png"
+    },
+    {
+      "key": "atacama",
+      "prompt": "Use case: photorealistic-natural. Asset: high resolution 3:2 landscape editorial image for premium Chilean Alte Tour travel website. Spectacular natural Chilean Atacama desert landscape, moon-valley sandstone ridges and terracotta mountains, distant volcanic skyline, soft golden evening sunlight, crisp weathered rock textures, pale blue sky. Wide scenic landscape with elegant natural depth, authentic desert geography, no buildings, no people. Sophisticated realistic travel photography, crisp detail, restrained natural color. No watermark, text, borders, collages, montage or artificial HDR.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-a1c79b40-0dc8-42b4-8618-8763f9ab20fe.png"
+    },
+    {
+      "key": "planificacion",
+      "prompt": "Use case: photorealistic-natural. Asset: high resolution 3:2 landscape editorial image for premium Chilean Alte Tour travel website. Editorial still life photograph of thoughtful travel planning on a light warm wooden desk: folded generic unlabelled road map, open blank cream notebook, pencil, compact camera, a cup of coffee and a small globe partly in frame. Natural window light, calm spacious composition, interesting diagonal lines, restrained navy and warm sand accents. No passport, no identity documents, no tickets, no legible text, no logos. Three-quarter overhead angle, real material textures. Sophisticated realistic travel photography, crisp detail, restrained natural color. No watermark, text, borders, collages, montage or artificial HDR.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-d9f8ca32-b315-4eab-9947-d3ac254750ac.png"
+    },
+    {
+      "key": "viajeros",
+      "prompt": "Use case: photorealistic-natural. Asset: high resolution 3:2 landscape editorial image for premium Chilean Alte Tour travel website. Candid travel editorial photograph of two adult Latin American travelers, a woman and man in their 40s, seen mostly from behind and side, walking slowly along a beautiful historic Mediterranean cobbled lane with pale stone walls and a distant sea view. Travel casual linen clothing in warm neutrals, small day bag, relaxed natural conversation. Wide environmental framing, people small enough to leave space to appreciate the destination, soft morning sunlight, tactile architectural textures, inviting understated atmosphere. No suitcases on cobbles, no specific tour uniform or company branding. Crisp photographic realism, natural materials and lighting, navy blue and warm sand harmony. No watermark, text, borders, collages or montage. Illustrative scene, not a photo of actual agency passengers.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-c4bb9064-1ef0-433a-92a5-7bef9948cd8f.png"
+    },
+    {
+      "key": "valparaiso",
+      "prompt": "Use case: photorealistic-natural. Asset: high resolution 3:2 landscape editorial image for premium Chilean Alte Tour travel website. A beautiful wide travel editorial photograph of Valparaiso Chile, colorful hillside houses and historic painted facades overlooking the blue Pacific harbor, layered authentic urban geography, a quiet foreground street with details of weathered wood and stucco, warm late afternoon natural light, sophisticated restrained colors. No text signs, no logos, no tourists posing, no invented monuments, realistic coastal Chile scene. Crisp photographic realism, natural materials and lighting, navy blue and warm sand harmony. No watermark, text, borders, collages or montage. Illustrative scene, not a photo of actual agency passengers.",
+      "source": "C:\\Users\\salas\\.codex\\generated_images\\01a132ee-9400-7ad3-bed6-138168b6398b\\exec-cd4c43c1-9dd3-46ba-b333-f414cb1276dc.png"
+    }
+  ]
+}

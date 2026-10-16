@@ -1,0 +1,433 @@
+{
+  "checks": [
+    {
+      "test": "Nueve páginas navegables",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1440px /",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1440px /",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1440px /viajes/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1440px /viajes/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1440px /viajes/turquia-2027/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1440px /viajes/turquia-2027/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1440px /nosotros/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1440px /nosotros/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1440px /misiones-comerciales/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1440px /misiones-comerciales/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1440px /turismo-receptivo/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1440px /turismo-receptivo/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1440px /contacto/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1440px /contacto/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1440px /privacidad/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1440px /privacidad/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1440px /condiciones/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1440px /condiciones/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1024px /",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1024px /",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1024px /viajes/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1024px /viajes/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1024px /viajes/turquia-2027/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1024px /viajes/turquia-2027/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1024px /nosotros/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1024px /nosotros/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1024px /misiones-comerciales/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1024px /misiones-comerciales/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1024px /turismo-receptivo/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1024px /turismo-receptivo/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1024px /contacto/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1024px /contacto/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1024px /privacidad/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1024px /privacidad/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 1024px /condiciones/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 1024px /condiciones/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 768px /",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 768px /",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 768px /viajes/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 768px /viajes/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 768px /viajes/turquia-2027/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 768px /viajes/turquia-2027/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 768px /nosotros/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 768px /nosotros/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 768px /misiones-comerciales/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 768px /misiones-comerciales/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 768px /turismo-receptivo/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 768px /turismo-receptivo/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 768px /contacto/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 768px /contacto/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 768px /privacidad/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 768px /privacidad/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 768px /condiciones/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 768px /condiciones/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 390px /",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 390px /",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 390px /viajes/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 390px /viajes/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 390px /viajes/turquia-2027/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 390px /viajes/turquia-2027/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 390px /nosotros/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 390px /nosotros/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 390px /misiones-comerciales/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 390px /misiones-comerciales/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 390px /turismo-receptivo/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 390px /turismo-receptivo/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 390px /contacto/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 390px /contacto/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 390px /privacidad/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 390px /privacidad/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 390px /condiciones/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 390px /condiciones/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 360px /",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 360px /",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 360px /viajes/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 360px /viajes/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 360px /viajes/turquia-2027/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 360px /viajes/turquia-2027/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 360px /nosotros/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 360px /nosotros/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 360px /misiones-comerciales/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 360px /misiones-comerciales/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 360px /turismo-receptivo/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 360px /turismo-receptivo/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 360px /contacto/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 360px /contacto/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 360px /privacidad/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 360px /privacidad/",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin desborde horizontal 360px /condiciones/",
+      "result": "PASS"
+    },
+    {
+      "test": "Una cabecera h1 360px /condiciones/",
+      "result": "PASS"
+    },
+    {
+      "test": "Todas las imágenes usan datos locales",
+      "result": "PASS"
+    },
+    {
+      "test": "Búsqueda encuentra Turquía",
+      "result": "PASS"
+    },
+    {
+      "test": "Búsqueda sin programa muestra estado vacío",
+      "result": "PASS"
+    },
+    {
+      "test": "Filtro Chile no inventa programas",
+      "result": "PASS"
+    },
+    {
+      "test": "Navegación al programa",
+      "result": "PASS"
+    },
+    {
+      "test": "Diez días de itinerario",
+      "result": "PASS"
+    },
+    {
+      "test": "Expandir todo",
+      "result": "PASS"
+    },
+    {
+      "test": "Contraer todo",
+      "result": "PASS"
+    },
+    {
+      "test": "Afiche abre como diálogo",
+      "result": "PASS"
+    },
+    {
+      "test": "Afiche se cierra",
+      "result": "PASS"
+    },
+    {
+      "test": "Preselección de interés corporativo",
+      "result": "PASS"
+    },
+    {
+      "test": "Vista portable no finge guardar consultas",
+      "result": "PASS"
+    },
+    {
+      "test": "Consulta preparada en enlace WhatsApp",
+      "result": "PASS"
+    },
+    {
+      "test": "Menú móvil abre",
+      "result": "PASS"
+    },
+    {
+      "test": "Menú móvil navega y cierra",
+      "result": "PASS"
+    },
+    {
+      "test": "Sin errores JavaScript",
+      "result": "PASS"
+    }
+  ],
+  "javascript_errors": []
+}

@@ -1,0 +1,13 @@
+Options -Indexes
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
+<FilesMatch "^(\.|_bootstrap\.php|config.*|.*\.(sql|json|log|bak))">
+  Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+# Activar HTTPS desde cPanel una vez instalado el certificado.
+# No exponer backend/src, config, storage, .env ni copias de base de datos.

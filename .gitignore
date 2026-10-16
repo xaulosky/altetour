@@ -1,0 +1,16 @@
+node_modules/
+frontend/dist/
+frontend/.astro/
+.env
+config.local.php
+backend/storage/*
+!backend/storage/.gitkeep
+deploy/
+*.log
+.DS_Store
+qa/
+__pycache__/
+.claude/
+pages-dist/
+preview/
+altetour-vista-previa.html
