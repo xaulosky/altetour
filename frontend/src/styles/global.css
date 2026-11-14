@@ -452,3 +452,9 @@ small{font-size:14px}
 .news-back:hover{text-decoration:underline;text-underline-offset:4px}
 @media(max-width:1000px){.news-grid{grid-template-columns:1fr 1fr;gap:22px}}
 @media(max-width:700px){.news-grid{grid-template-columns:1fr}.news-hero h1{font-size:36px}.news-article-body p{font-size:16px}.news-article-layout{padding-block:32px 50px}}
+
+/* Sello «Desde Biobío al mundo»: el texto debe caber en el círculo en los tres idiomas. */
+.story-stamp{width:160px;height:160px;padding:16px;text-align:center;line-height:1.2;font-size:11px;letter-spacing:.16em;right:-26px;top:-26px}
+.story-stamp strong{display:block;margin-top:6px;font-size:23px;line-height:1.1;letter-spacing:-.02em}
+@media(max-width:900px){.story-stamp{width:140px;height:140px;right:-14px;top:-18px;font-size:10px}.story-stamp strong{font-size:20px}}
+@media(max-width:600px){.story-stamp{width:124px;height:124px;padding:12px;right:-8px;top:-16px;font-size:9px;letter-spacing:.12em;border-width:6px}.story-stamp strong{font-size:17px}}

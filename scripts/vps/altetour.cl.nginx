@@ -1,0 +1,82 @@
+# altetour.cl - Alte Tour (Astro estatico + PHP para /admin/ y /api/)
+#
+# public_html: paginas de Astro y la parte publica del PHP (admin/, api/).
+# altetour-app (fuera de la raiz web): codigo, configuracion y datos.
+# PHP corre en su propio pool (usuario altetour, /run/php/php8.4-fpm-altetour.sock).
+# Mismo patron de dominio que kaikenpet.cl: www y HTTP redirigen a https://altetour.cl.
+# Certificado: certbot con --webroot, por eso HTTP deja pasar /.well-known/acme-challenge/.
+
+# ── El dominio canonico ────────────────────────────────────────────────────
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name altetour.cl;
+    root /var/www/altetour/public_html;
+    index index.html index.php;
+
+    ssl_certificate /etc/letsencrypt/live/altetour.cl/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/altetour.cl/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    # Imagenes de noticias desde el panel (el pool admite hasta 6 MB).
+    client_max_body_size 8m;
+
+    error_page 404 /404.html;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header Strict-Transport-Security "max-age=31536000" always;
+
+    # Equivalente al .htaccess: nada oculto, ni el puente, ni respaldos o SQL.
+    location ~ /\.(?!well-known/) { deny all; }
+    location = /_bootstrap.php { deny all; }
+    location ~* \.(sql|log|bak)$ { deny all; }
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # Recursos con nombre estable: cache moderado. _astro lleva hash en el nombre.
+    location /assets/ {
+        expires 7d;
+        add_header Cache-Control "public";
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header Strict-Transport-Security "max-age=31536000" always;
+    }
+    location /_astro/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header Strict-Transport-Security "max-age=31536000" always;
+    }
+
+    # Solo existen admin/index.php y api/index.php; cualquier otro .php da 404.
+    location ~ ^/(admin|api)/index\.php$ {
+        # fastcgi-php.conf ya trae su propio try_files.
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.4-fpm-altetour.sock;
+    }
+    location ~ \.php$ { return 404; }
+}
+
+# ── www manda a la raiz, sin servir nada ───────────────────────────────────
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name www.altetour.cl;
+    ssl_certificate /etc/letsencrypt/live/altetour.cl/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/altetour.cl/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+    location / { return 301 https://altetour.cl$request_uri; }
+}
+
+# ── HTTP siempre sube a HTTPS y a la raiz (salvo la renovacion del certificado) ─
+server {
+    listen 80;
+    listen [::]:80;
+    server_name altetour.cl www.altetour.cl;
+    location ^~ /.well-known/acme-challenge/ { root /var/www/altetour/public_html; }
+    location / { return 301 https://altetour.cl$request_uri; }
+}
