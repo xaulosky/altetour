@@ -14,3 +14,4 @@ __pycache__/
 pages-dist/
 preview/
 altetour-vista-previa.html
+tmp/

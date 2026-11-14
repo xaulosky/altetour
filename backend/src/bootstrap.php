@@ -24,6 +24,7 @@ function storage():string {
     return $p;
 }
 require_once __DIR__.'/Store.php';
+require_once __DIR__.'/News.php';
 function store():Store {static $store;return $store??=new Store(config(),storage());}
 function beginSession():void {
     if(session_status()===PHP_SESSION_ACTIVE)return;

@@ -2,15 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import site from '../data/site.json';
 import programs from '../data/programs.json';
+import news from '../data/news.json';
 import { getPages } from '../lib/render.mjs';
+import { LANGS, localizePath } from '../lib/i18n.mjs';
+// Español en la raíz; inglés y portugués bajo /en/ y /pt/, con las mismas rutas.
 export function getStaticPaths() {
-  return Object.entries(getPages(site, programs)).map(([url, page]) => ({
-    params: { path: url === '/' ? undefined : url.replace(/^\/|\/$/g, '') },
-    props: { page },
+  return LANGS.flatMap(lang => Object.entries(getPages(site, programs, news, lang)).map(([route, page]) => {
+    const url = localizePath(route, lang);
+    return {
+      params: { path: url === '/' ? undefined : url.replace(/^\/|\/$/g, '') },
+      props: { page, lang, route },
+    };
   }));
 }
-const { page } = Astro.props;
+const { page, lang, route } = Astro.props;
 ---
-<Layout title={page.title} description={page.description}>
+<Layout title={page.title} description={page.description} lang={lang} route={route}>
   <Fragment set:html={page.html} />
 </Layout>

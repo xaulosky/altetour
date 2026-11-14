@@ -77,8 +77,9 @@ Este último comando genera una demostración usando el renderizador compartido,
 
 ```text
 frontend/
-  src/data/         Contenido corporativo y programa en JSON
-  src/lib/          Renderizadores compartidos; salida escapada
+  src/data/         Contenido corporativo, programa y noticias en JSON
+  src/i18n/         Diccionarios de inglés y portugués (español -> traducción)
+  src/lib/          Renderizadores compartidos (salida escapada) e idiomas
   src/layouts/      Layout Astro y metadatos
   src/pages/        Rutas estáticas, robots y 404
   src/scripts/      Menú, filtros, itinerario y formulario
@@ -105,6 +106,28 @@ preview/            Render estático de demostración
 4. Compilar Astro y publicar el nuevo `dist/`.
 
 El formulario y los estados de consultas son dinámicos y se registran inmediatamente en el backend. El estado publicado/borrador también se valida en el backend al recibir una consulta. Un programa archivado puede seguir viéndose en un HTML antiguo hasta volver a publicar: no omitir el paso de despliegue.
+
+### Noticias
+
+Las noticias se crean, editan y eliminan en el panel, en **Noticias** (`/admin/?view=news`). Cada noticia tiene categoría (Viajes, Actividades, Eventos o Agencia), fecha, estado (publicada o borrador), imagen (de la biblioteca del sitio o subida en JPG, PNG o WebP), un enlace opcional y su texto en español, inglés y portugués. El español es obligatorio. Si falta un idioma, esa versión del sitio muestra la noticia en español.
+
+Igual que el programa, se publican por compilación:
+
+1. Guardar la noticia en el panel.
+2. Ejecutar `php backend/bin/export-news.php --write`. Escribe `frontend/src/data/news.json` con las noticias publicadas y copia las imágenes subidas a `frontend/public/assets/news/`. En un hosting sin consola, descargar `news.json` desde el panel y copiar las imágenes de `storage/news-images/`.
+3. Compilar y publicar. En GitHub Pages basta con subir el commit.
+
+`php backend/bin/install.php` carga las noticias iniciales de `backend/config/news.seed.json` solo si todavía no existe ninguna.
+
+### Idiomas
+
+El sitio se publica en español (raíz), inglés (`/en/`) y portugués (`/pt/`), con selector de idioma en la cabecera. Las páginas se escriben en español en `frontend/src/lib/render.mjs` y se traducen al generar el sitio con los diccionarios de `frontend/src/i18n/`. Al cambiar o agregar un texto en español, ejecutar:
+
+```bash
+node scripts/i18n-check.mjs --missing tmp/i18n
+```
+
+Informa cuántos textos quedan sin traducir y guarda la lista en `tmp/i18n/en.json` y `tmp/i18n/pt.json` para completar los diccionarios. Un texto sin traducción se muestra en español.
 
 La pantalla actual edita el programa cargado, no es todavía un CMS genérico para crear cualquier viaje. Fechas, rutas, vuelos, textos específicos, documentos, preguntas y días se mantienen en el contenido y el renderizador. Antes de agregar otro destino hay que convertir los bloques específicos de Turquía en campos genéricos. Ver `docs/SIGUIENTE-ETAPA.md`.
 

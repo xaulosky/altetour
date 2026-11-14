@@ -66,6 +66,25 @@ final class Store {
         if($this->pdo){$json=json_encode($program,JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR);$q=$this->pdo->prepare('INSERT INTO programs (slug,data) VALUES (?,?) ON DUPLICATE KEY UPDATE data=?,updated_at=UTC_TIMESTAMP()');$q->execute([$program['slug'],$json,$json]);return;}
         $this->json(function(&$db)use($program){$db['programs'][$program['slug']]=$program;},true);
     }
+    /** Noticias: se publican en el sitio estático mediante exportación de news.json. */
+    public function news():array {
+        if($this->pdo){$rows=array_map(fn($r)=>json_decode($r['data'],true,512,JSON_THROW_ON_ERROR),$this->pdo->query('SELECT data FROM news')->fetchAll());}
+        else $rows=$this->json(fn($db)=>array_values($db['news']??[]));
+        usort($rows,fn($a,$b)=>strcmp($b['date'],$a['date'])?:strcmp($a['slug'],$b['slug']));
+        return $rows;
+    }
+    public function newsItem(string $slug):?array {
+        if($this->pdo){$q=$this->pdo->prepare('SELECT data FROM news WHERE slug=?');$q->execute([$slug]);$r=$q->fetch();return $r?json_decode($r['data'],true,512,JSON_THROW_ON_ERROR):null;}
+        return $this->json(fn($db)=>$db['news'][$slug]??null);
+    }
+    public function putNews(array $item):void {
+        if($this->pdo){$json=json_encode($item,JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR);$q=$this->pdo->prepare('INSERT INTO news (slug,data) VALUES (?,?) ON DUPLICATE KEY UPDATE data=?,updated_at=UTC_TIMESTAMP()');$q->execute([$item['slug'],$json,$json]);return;}
+        $this->json(function(&$db)use($item){$db['news'][$item['slug']]=$item;},true);
+    }
+    public function deleteNews(string $slug):void {
+        if($this->pdo){$q=$this->pdo->prepare('DELETE FROM news WHERE slug=?');$q->execute([$slug]);return;}
+        $this->json(function(&$db)use($slug){unset($db['news'][$slug]);},true);
+    }
     public function lead(string $id):?array {
         if($this->pdo){$q=$this->pdo->prepare('SELECT * FROM leads WHERE id=?');$q->execute([$id]);$r=$q->fetch();if($r)$r['data']=json_decode($r['data'],true,512,JSON_THROW_ON_ERROR);return $r?:null;}
         return $this->json(fn($db)=>$db['leads'][$id]??null);

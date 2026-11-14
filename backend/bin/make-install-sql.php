@@ -13,6 +13,9 @@ $literal=static fn(string $v):string=>'CONVERT(0x'.bin2hex($v).' USING utf8mb4)'
 foreach(json_decode(file_get_contents($root.'/config/programs.seed.json'),true,512,JSON_THROW_ON_ERROR) as $p){
     $sql.="\nINSERT INTO programs (slug,data) VALUES (".$literal($p['slug']).','.$literal(json_encode($p,JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR)).") ON DUPLICATE KEY UPDATE slug=slug;\n";
 }
+foreach(json_decode(file_get_contents($root.'/config/news.seed.json'),true,512,JSON_THROW_ON_ERROR) as $n){
+    $sql.="\nINSERT INTO news (slug,data) VALUES (".$literal($n['slug']).','.$literal(json_encode($n,JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR)).") ON DUPLICATE KEY UPDATE slug=slug;\n";
+}
 $hash=$literal(password_hash($password,PASSWORD_DEFAULT));
 $sql.="\nINSERT INTO admins (email,password_hash) VALUES (".$literal($email).",$hash) ON DUPLICATE KEY UPDATE password_hash=$hash;\n";
 echo "-- CONTIENE CONFIGURACION DE ACCESO. IMPORTAR EN PHPMYADMIN Y ELIMINAR ESTE ARCHIVO.\n".$sql;

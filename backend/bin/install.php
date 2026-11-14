@@ -12,5 +12,9 @@ try {
     \Alte\store()->install();
     $seed=json_decode(file_get_contents($root.'/config/programs.seed.json'),true,512,JSON_THROW_ON_ERROR);
     foreach($seed as $p)if(!\Alte\store()->program($p['slug']))\Alte\store()->putProgram($p);
-    echo "Almacenamiento instalado. No se reemplazaron programas existentes. Crea un administrador con bin/create-admin.php.\n";
+    // Las noticias iniciales solo se cargan si todavía no existe ninguna, para no revivir noticias eliminadas.
+    if(!\Alte\store()->news()){
+        foreach(json_decode(file_get_contents($root.'/config/news.seed.json'),true,512,JSON_THROW_ON_ERROR) as $n)\Alte\store()->putNews($n);
+    }
+    echo "Almacenamiento instalado. No se reemplazaron programas ni noticias existentes. Crea un administrador con bin/create-admin.php.\n";
 }catch(Throwable $e){fwrite(STDERR,"Instalación fallida: ".$e->getMessage()."\n");exit(1);}

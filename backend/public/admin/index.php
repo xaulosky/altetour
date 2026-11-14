@@ -2,6 +2,7 @@
 declare(strict_types=1);
 require dirname(__DIR__).'/_bootstrap.php';
 use Alte\Problem;
+use Alte\News;
 use function Alte\{escape as e,store,beginSession,headersPrivate,csrfCheck,rateLimit,requireAdmin};
 const STATUSES=['nuevo'=>'Nuevo','contactado'=>'En contacto','cotizado'=>'Cotizado','cerrado'=>'Cerrado'];
 function csrf():string{return '<input type="hidden" name="_csrf" value="'.e($_SESSION['csrf']).'">';}
@@ -48,6 +49,22 @@ try {
                 $status=$_POST['status']??'';if(!in_array($status,['published','draft','archived'],true))throw new Problem(422,'Estado de publicación inválido.');$p['status']=$status;
                 store()->putProgram($p);redirect('programs','Cambios guardados en el backend. Exporta programs.json, recompila Astro y publica el nuevo dist para actualizar el sitio visible.');
             }
+            if($action==='news-save'){
+                $slug=is_string($_POST['original']??null)?$_POST['original']:'';
+                $existing=$slug!==''?store()->newsItem($slug):null;
+                if($slug!==''&&!$existing)throw new Problem(404,'Noticia no encontrada.');
+                $item=News::fromForm($_POST,$_FILES,$existing);
+                store()->putNews($item);
+                redirect('news-edit','Noticia guardada. Para verla en el sitio, exporta news.json y vuelve a publicar.',$item['slug']);
+            }
+            if($action==='news-delete'){
+                $slug=is_string($_POST['slug']??null)?$_POST['slug']:'';
+                if(($_POST['confirmation']??'')!=='ELIMINAR'||!store()->newsItem($slug))throw new Problem(422,'Para eliminar, escribe ELIMINAR y verifica la noticia.');
+                $image=store()->newsItem($slug)['image'];store()->deleteNews($slug);
+                // Borra la imagen subida si ninguna otra noticia la usa.
+                if(($file=News::uploadedFile($image))&&!array_filter(store()->news(),fn($n)=>$n['image']===$image))unlink($file);
+                redirect('news','Noticia eliminada. Exporta news.json y vuelve a publicar para retirarla del sitio.');
+            }
             throw new Problem(404,'Acción no disponible.');
         }
     }
@@ -62,6 +79,16 @@ try {
     if($view==='export-programs'){
         header('Content-Type: application/json; charset=utf-8');header('Content-Disposition: attachment; filename="programs.json"');
         echo json_encode(store()->programs(),JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_THROW_ON_ERROR);exit;
+    }
+    if($view==='export-news'){
+        header('Content-Type: application/json; charset=utf-8');header('Content-Disposition: attachment; filename="news.json"');
+        echo json_encode(News::export(),JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT|JSON_THROW_ON_ERROR);exit;
+    }
+    if($view==='news-image'){
+        // Vista previa privada de imágenes subidas que aún no se han exportado al sitio.
+        $file=News::uploadedFile('/assets/news/'.(is_string($_GET['file']??null)?$_GET['file']:''));
+        if(!$file)throw new Problem(404,'Imagen no encontrada.');
+        header('Content-Type: '.(new finfo(FILEINFO_MIME_TYPE))->file($file));header('Content-Length: '.filesize($file));readfile($file);exit;
     }
     $body='';$title='Resumen';$flash=$_SESSION['flash']??'';unset($_SESSION['flash']);
     if($view==='login'){
@@ -99,7 +126,41 @@ try {
             $body.='</ul></details></section>';
         }
         $body.='<p class="footnote">Esta base permite editar el programa cargado. Alta de nuevos programas, medios e itinerarios desde un editor visual y publicación automática quedan para la siguiente etapa.</p>';
+    }elseif($view==='news'){
+        $title='Noticias';$items=store()->news();
+        $body='<div class="alert"><strong>Las noticias se publican por compilación, igual que el programa.</strong><p>Guardar aquí no cambia el sitio ya publicado. Después de editar, exporta news.json: desde la consola con <code>php backend/bin/export-news.php --write</code> (también copia las imágenes subidas), o descargándolo aquí y reemplazando frontend/src/data/news.json. Luego compila y publica. Solo se exportan las noticias publicadas.</p><div class="button-row"><a class="button" href="'.url('news-edit').'">+ Nueva noticia</a><a class="button secondary" href="/admin/?view=export-news">Descargar news.json</a></div></div>';
+        $body.='<div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Noticia</th><th>Categoría</th><th>Idiomas</th><th>Estado</th><th></th></tr></thead><tbody>';
+        foreach($items as $n){
+            $langs=implode(' · ',array_map('strtoupper',array_values(array_filter(array_keys(News::LANGS),fn($l)=>isset($n[$l])))));
+            $body.='<tr><td>'.e($n['date']).'</td><td><strong>'.e($n['es']['title']).'</strong><small>'.e($n['slug']).'</small></td><td>'.e(News::CATEGORIES[$n['category']]??$n['category']).'</td><td>'.e($langs).'</td><td><span class="status status-'.($n['status']==='published'?'cotizado':'nuevo').'">'.($n['status']==='published'?'Publicada':'Borrador').'</span></td><td><a class="text-link" href="'.url('news-edit',$n['slug']).'">Editar →</a></td></tr>';
+        }
+        if(!$items)$body.='<tr><td colspan="6" class="empty">Todavía no hay noticias. Crea la primera con «Nueva noticia».</td></tr>';
+        $body.='</tbody></table></div><p class="footnote">Categorías disponibles: '.e(implode(', ',News::CATEGORIES)).'. El español es obligatorio; si falta inglés o portugués, esas versiones del sitio muestran el texto en español.</p>';
+    }elseif($view==='news-edit'){
+        $slug=is_string($_GET['id']??null)?$_GET['id']:'';$n=$slug!==''?store()->newsItem($slug):null;
+        if($slug!==''&&!$n)throw new Problem(404,'Noticia no encontrada.');
+        $title=$n?'Editar noticia':'Nueva noticia';
+        $v=static fn(string $lang,string $field):string=>e($n[$lang][$field]??'');
+        $body='<a class="text-link" href="'.url('news').'">← Volver a noticias</a><form class="card news-form" method="post" enctype="multipart/form-data" action="'.url('news-edit',$slug).'">'.csrf().'<input type="hidden" name="action" value="news-save"><input type="hidden" name="original" value="'.e($slug).'">';
+        $body.='<div class="form-columns"><label>Categoría<select name="category">';
+        foreach(News::CATEGORIES as $k=>$label)$body.='<option value="'.$k.'"'.(($n['category']??'viajes')===$k?' selected':'').'>'.e($label).'</option>';
+        $body.='</select></label><label>Estado<select name="status">';
+        foreach(News::STATUSES as $k=>$label)$body.='<option value="'.$k.'"'.(($n['status']??'draft')===$k?' selected':'').'>'.e($label).'</option>';
+        $body.='</select></label><label>Fecha<input type="date" name="date" value="'.e($n['date']??gmdate('Y-m-d')).'" required></label>';
+        $body.=$n?'<label>Dirección<input value="/noticias/'.e($n['slug']).'/" readonly></label>':'<label>Dirección (opcional)<input name="slug" maxlength="90" placeholder="Se genera desde el título" pattern="[a-z0-9-]*"></label>';
+        $body.='<label class="wide">Enlace relacionado (opcional)<input name="linkUrl" maxlength="500" value="'.e($n['linkUrl']??'').'" placeholder="https://… o una ruta del sitio, como /viajes/turquia-2027/"></label></div>';
+        $body.='<h3>Imagen</h3><div class="news-image-row">';
+        if($n&&$n['image']!==''){$preview=News::uploadedFile($n['image'])?'/admin/?view=news-image&file='.rawurlencode(basename($n['image'])):$n['image'];$body.='<img class="news-thumb" src="'.e($preview).'" alt="">';}
+        $body.='<div class="form-columns"><label>Elegir de la biblioteca<select name="image"><option value="__keep">'.($n?'Mantener la imagen actual':'Sin elegir (se usa Biobío)').'</option>';
+        foreach(News::LIBRARY as $path=>$label)$body.='<option value="'.e($path).'">'.e($label).'</option>';
+        $body.='</select></label><label>O subir una imagen nueva (JPG, PNG o WebP, máx. '.e(round(News::maxUploadBytes()/1048576,1)).' MB)<input type="file" name="image_upload" accept="image/jpeg,image/png,image/webp"></label></div></div>';
+        foreach(News::LANGS as $lang=>$label){
+            $req=$lang==='es';
+            $body.='<fieldset class="news-lang"><legend>'.e($label).($req?' · obligatorio':' · opcional').'</legend><div class="form-columns"><label class="wide">Título<input name="'.$lang.'_title" maxlength="160" value="'.$v($lang,'title').'"'.($req?' required':'').'></label><label class="wide">Resumen<textarea name="'.$lang.'_summary" maxlength="400" rows="2"'.($req?' required':'').'>'.$v($lang,'summary').'</textarea></label><label class="wide">Texto (separa los párrafos con una línea en blanco)<textarea name="'.$lang.'_body" maxlength="20000" rows="8"'.($req?' required':'').'>'.$v($lang,'body').'</textarea></label><label>Descripción de la imagen<input name="'.$lang.'_imageAlt" maxlength="200" value="'.$v($lang,'imageAlt').'"></label><label>Texto del enlace<input name="'.$lang.'_linkLabel" maxlength="80" value="'.$v($lang,'linkLabel').'"></label></div></fieldset>';
+        }
+        $body.='<button class="button" type="submit">Guardar noticia</button></form>';
+        if($n)$body.='<details class="card delete-card"><summary>Eliminar noticia</summary><p>Elimina la noticia del panel. Seguirá visible en el sitio hasta que exportes news.json y vuelvas a publicar.</p><form method="post">'.csrf().'<input type="hidden" name="action" value="news-delete"><input type="hidden" name="slug" value="'.e($n['slug']).'"><label>Escribe ELIMINAR<input name="confirmation" pattern="ELIMINAR" required autocomplete="off"></label><button type="submit" class="button danger-button">Eliminar noticia</button></form></details>';
     }else{throw new Problem(404,'Vista no disponible.');}
-    ?><!doctype html><html lang="es-CL"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title><?=e($title)?> · Alte Tour Admin</title><link rel="stylesheet" href="/admin/admin.css"></head><body class="<?=$view==='login'?'login-page':''?>"><?php if($view!=='login'):?><aside class="sidebar"><a class="admin-brand" href="/admin/">ALTE <span>TOUR</span><small>PANEL DE ADMINISTRACIÓN</small></a><nav aria-label="Panel"><a class="<?=$view==='dashboard'?'active':''?>" href="/admin/">Resumen</a><a class="<?=in_array($view,['leads','lead'])?'active':''?>" href="/admin/?view=leads">Consultas</a><a class="<?=$view==='programs'?'active':''?>" href="/admin/?view=programs">Programa y publicación</a><a href="/">Ver sitio web ↗</a></nav><div class="session-user"><small><?=e($_SESSION['admin'])?></small><form method="post"><?=csrf()?><input type="hidden" name="action" value="logout"><button type="submit">Cerrar sesión</button></form></div></aside><main class="admin-main"><header class="admin-header"><span class="eyebrow">ALTE TOUR · OPERACIÓN</span><h1><?=e($title)?></h1><p>Consultas y contenido comercial, en un solo lugar.</p></header><?php if($flash):?><div class="alert success"><?=e($flash)?></div><?php endif;?><?=$body?></main><?php else:?><main><?=$body?></main><?php endif;?></body></html><?php
+    ?><!doctype html><html lang="es-CL"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title><?=e($title)?> · Alte Tour Admin</title><link rel="stylesheet" href="/admin/admin.css"></head><body class="<?=$view==='login'?'login-page':''?>"><?php if($view!=='login'):?><aside class="sidebar"><a class="admin-brand" href="/admin/">ALTE <span>TOUR</span><small>PANEL DE ADMINISTRACIÓN</small></a><nav aria-label="Panel"><a class="<?=$view==='dashboard'?'active':''?>" href="/admin/">Resumen</a><a class="<?=in_array($view,['leads','lead'])?'active':''?>" href="/admin/?view=leads">Consultas</a><a class="<?=$view==='programs'?'active':''?>" href="/admin/?view=programs">Programa y publicación</a><a class="<?=in_array($view,['news','news-edit'])?'active':''?>" href="/admin/?view=news">Noticias</a><a href="/">Ver sitio web ↗</a></nav><div class="session-user"><small><?=e($_SESSION['admin'])?></small><form method="post"><?=csrf()?><input type="hidden" name="action" value="logout"><button type="submit">Cerrar sesión</button></form></div></aside><main class="admin-main"><header class="admin-header"><span class="eyebrow">ALTE TOUR · OPERACIÓN</span><h1><?=e($title)?></h1><p>Consultas y contenido comercial, en un solo lugar.</p></header><?php if($flash):?><div class="alert success"><?=e($flash)?></div><?php endif;?><?=$body?></main><?php else:?><main><?=$body?></main><?php endif;?></body></html><?php
 } catch(Problem $ex){http_response_code($ex->status);echo '<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Alte Tour · Aviso</title><link rel="stylesheet" href="/admin/admin.css"><body class="login-page"><main class="login-card"><h1>No se completó la acción.</h1><p>'.e($ex->getMessage()).'</p><a class="button" href="/admin/">Volver al panel</a></main></body></html>';}
 catch(\Throwable $ex){error_log('Alte Admin: '.$ex->getMessage());http_response_code(503);echo '<!doctype html><html lang="es"><meta charset="utf-8"><title>Alte Tour</title><body><h1>Panel temporalmente no disponible</h1><p>Revisa la instalación y la conexión de almacenamiento en la configuración privada.</p></body></html>';}

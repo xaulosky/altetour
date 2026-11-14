@@ -2,14 +2,17 @@
 import '../styles/global.css';
 import site from '../data/site.json';
 import programs from '../data/programs.json';
-import { header, footer } from '../lib/render.mjs';
-const { title, description } = Astro.props;
+import { chrome } from '../lib/render.mjs';
+import { LANGS, LANG_META, localizePath } from '../lib/i18n.mjs';
+const { title, description, lang = 'es', route = '/' } = Astro.props;
 const indexable = import.meta.env.PUBLIC_SITE_INDEXABLE === 'true';
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const heroNav = Astro.url.pathname === '/' || Astro.url.pathname === '/nosotros/' || (Astro.url.pathname.startsWith('/viajes/') && Astro.url.pathname !== '/viajes/');
+const heroNav = route === '/' || route === '/nosotros/' || (route.startsWith('/viajes/') && route !== '/viajes/');
+const { header, footer } = chrome(site, programs, lang, route);
+const meta = LANG_META[lang];
 ---
 <!doctype html>
-<html lang="es-CL">
+<html lang={meta.html}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -18,17 +21,19 @@ const heroNav = Astro.url.pathname === '/' || Astro.url.pathname === '/nosotros/
   <meta name="robots" content={indexable ? 'index,follow' : 'noindex,nofollow'} />
   <title>{title}</title>
   {indexable && <link rel="canonical" href={canonical} />}
+  {LANGS.map(l => <link rel="alternate" hreflang={LANG_META[l].html} href={new URL(localizePath(route, l), Astro.site)} />)}
+  <link rel="alternate" hreflang="x-default" href={new URL(route, Astro.site)} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:locale" content="es_CL" />
+  <meta property="og:locale" content={meta.og} />
   <meta property="og:image" content={new URL('/assets/patagonia.webp', Astro.site)} />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
 </head>
 <body class:list={{ 'has-hero-nav': heroNav }}>
-  <Fragment set:html={header(site)} />
+  <Fragment set:html={header} />
   <main id="main" tabindex="-1"><slot /></main>
-  <Fragment set:html={footer(site,programs)} />
+  <Fragment set:html={footer} />
   <script>
     import { boot } from '../scripts/site.js';
     boot();
