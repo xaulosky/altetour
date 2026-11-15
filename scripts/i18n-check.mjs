@@ -13,7 +13,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
 const site=read('frontend/src/data/site.json'),programs=read('frontend/src/data/programs.json'),news=read('frontend/src/data/news.json');
 // Textos que son iguales en todos los idiomas (marcas, siglas, nombres propios).
-const SAME=new Set(['Alte Tour','ALTE TOUR','USD','WhatsApp','Instagram','TA','Biobío','Chile','Teresa Alarcón','Contur Biobío','Fedetur','Pamukkale','Capadocia','Estambul']);
+const SAME=new Set(['Alte Tour','ALTE TOUR','USD','WhatsApp','Instagram','TA','Biobío','Chile','Teresa Alarcón','Contur Biobío','Fedetur','Pamukkale','Capadocia','Estambul','NetGenius']);
 
 function pageSet(lang){
   const pages=getPages(site,programs,news,lang),es=getPages(site,programs,news,'es');

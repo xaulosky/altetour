@@ -50,6 +50,7 @@
 .footer-notice p{font-size:14px;line-height:1.8;color:#dce6eb}
 .footer-notice p>span{color:#a9bdc8}
 .footer-legal{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:25px 32px;font-size:14px;color:#a9bdc8}
+.footer-copy{display:flex;flex-direction:column;gap:2px}.footer-credit{font-size:13px;color:#8fa6b2}.footer-legal .footer-credit a{display:inline;min-height:0;color:#d3e0e6}
 .footer-legal nav{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
 .footer-legal a{display:flex;align-items:center;gap:7px;min-height:36px}
 .footer-up-arrow{width:16px;height:16px;transform:rotate(-90deg)}

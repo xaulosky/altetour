@@ -156,6 +156,7 @@ export default {
   "Enviar una consulta": "Send an inquiry",
   "Viajes nacionales e internacionales · Misiones comerciales · Turismo receptivo.": "Domestic and international travel · Trade missions · Inbound tourism.",
   "Las consultas no constituyen reservas. Disponibilidad, precios y condiciones se confirman con Alte Tour.": "Inquiries do not constitute bookings. Availability, prices and conditions are confirmed with Alte Tour.",
+  "Sitio web desarrollado por": "Website developed by",
   "© 2026 Alte Tour. Todos los derechos reservados.": "© 2026 Alte Tour. All rights reserved.",
   "Enlaces legales": "Legal links",
   "Privacidad": "Privacy",

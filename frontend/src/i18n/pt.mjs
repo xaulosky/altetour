@@ -156,6 +156,7 @@ export default {
   "Enviar una consulta": "Enviar uma consulta",
   "Viajes nacionales e internacionales · Misiones comerciales · Turismo receptivo.": "Viagens nacionais e internacionais · Missões comerciais · Turismo receptivo.",
   "Las consultas no constituyen reservas. Disponibilidad, precios y condiciones se confirman con Alte Tour.": "As consultas não constituem reservas. Disponibilidade, preços e condições são confirmados com a Alte Tour.",
+  "Sitio web desarrollado por": "Site desenvolvido por",
   "© 2026 Alte Tour. Todos los derechos reservados.": "© 2026 Alte Tour. Todos os direitos reservados.",
   "Enlaces legales": "Links legais",
   "Privacidad": "Privacidade",
