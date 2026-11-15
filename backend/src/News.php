@@ -19,6 +19,8 @@ final class News {
         '/assets/viajeros.webp'=>'Viajeros','/assets/misiones.webp'=>'Misiones comerciales','/assets/planificacion.webp'=>'Planificación','/assets/teresa.webp'=>'Retrato de Teresa Alarcón',
     ];
     private const UPLOAD_TYPES=['image/jpeg'=>'jpg','image/png'=>'png','image/webp'=>'webp'];
+    /** Fotos de galería por noticia. */
+    public const GALLERY_MAX=12;
 
     public static function imageDir():string {
         $dir=storage().'/news-images';
@@ -27,7 +29,7 @@ final class News {
     }
     /** Ruta de un archivo subido a partir de su valor público /assets/news/<archivo>. */
     public static function uploadedFile(string $image):?string {
-        if(!preg_match('#^/assets/news/([a-f0-9]{32}\.(?:jpg|png|webp))$#D',$image,$m))return null;
+        if(!preg_match('#^/assets/news/([a-f0-9]{32}(?:-sm)?\.(?:jpg|png|webp))$#D',$image,$m))return null;
         $path=self::imageDir().'/'.$m[1];
         return is_file($path)?$path:null;
     }
@@ -91,18 +93,78 @@ final class News {
             }
         }
         if($item['image']==='')$item['image']='/assets/biobio.webp';
+        // Galería: conserva las fotos que no se marcaron para quitar y agrega las subidas.
+        $remove=is_array($post['gallery_remove']??null)?array_filter($post['gallery_remove'],'is_string'):[];
+        $gallery=array_values(array_filter(self::gallery($existing),fn($g)=>!in_array($g['src'],$remove,true)));
+        foreach(self::multiUpload($files['gallery_upload']??null) as $upload){
+            if(count($gallery)>=self::GALLERY_MAX)throw new Problem(422,'La galería admite hasta '.self::GALLERY_MAX.' fotos. Quita alguna antes de subir más.');
+            $gallery[]=self::storeUpload($upload,true);
+        }
+        $item['gallery']=$gallery;
         return $item;
     }
-    private static function storeUpload(array $upload):string {
+    /** Galería normalizada de una noticia: lista de ['src'=>…, 'thumb'=>…]. */
+    public static function gallery(?array $item):array {
+        $out=[];
+        foreach(($item['gallery']??[]) as $g){
+            if(is_string($g))$g=['src'=>$g];
+            if(!is_array($g)||!is_string($g['src']??null)||$g['src']==='')continue;
+            $out[]=['src'=>$g['src'],'thumb'=>is_string($g['thumb']??null)&&$g['thumb']!==''?$g['thumb']:$g['src']];
+        }
+        return $out;
+    }
+    /** Todas las rutas de imagen de una noticia (portada y galería). */
+    public static function imagePaths(array $item):array {
+        $paths=[$item['image']??''];
+        foreach(self::gallery($item) as $g){$paths[]=$g['src'];$paths[]=$g['thumb'];}
+        return array_values(array_unique(array_filter($paths)));
+    }
+    /** Normaliza un <input type=file multiple> de PHP a una lista de archivos. */
+    private static function multiUpload(mixed $field):array {
+        if(!is_array($field)||!is_array($field['name']??null))return [];
+        $list=[];
+        foreach(array_keys($field['name']) as $i){
+            if(($field['error'][$i]??UPLOAD_ERR_NO_FILE)===UPLOAD_ERR_NO_FILE)continue;
+            $list[]=['name'=>$field['name'][$i],'type'=>$field['type'][$i]??'','tmp_name'=>$field['tmp_name'][$i]??'','error'=>$field['error'][$i],'size'=>$field['size'][$i]??0];
+        }
+        return $list;
+    }
+    /**
+     * Guarda una imagen subida. Si GD está disponible la reduce a 1600 px en WebP
+     * (las fotos de celular pesan varios MB); en galería también crea una miniatura.
+     */
+    private static function storeUpload(array $upload,bool $gallery=false):string|array {
         $max=self::maxUploadBytes();
         if(($upload['error']??0)===UPLOAD_ERR_INI_SIZE||($upload['error']??0)===UPLOAD_ERR_FORM_SIZE||($upload['size']??0)>$max)throw new Problem(422,'La imagen supera el máximo de '.round($max/1048576,1).' MB.');
         if(($upload['error']??1)!==UPLOAD_ERR_OK||!is_uploaded_file($upload['tmp_name']??''))throw new Problem(422,'No se pudo recibir la imagen. Vuelve a intentarlo.');
         $type=(new \finfo(FILEINFO_MIME_TYPE))->file($upload['tmp_name']);
         if(!isset(self::UPLOAD_TYPES[$type])||!getimagesize($upload['tmp_name']))throw new Problem(422,'La imagen debe ser JPG, PNG o WebP.');
-        $name=bin2hex(random_bytes(16)).'.'.self::UPLOAD_TYPES[$type];
-        if(!move_uploaded_file($upload['tmp_name'],self::imageDir().'/'.$name))throw new RuntimeException('No se pudo guardar la imagen.');
-        chmod(self::imageDir().'/'.$name,0600);
-        return '/assets/news/'.$name;
+        $id=bin2hex(random_bytes(16));$dir=self::imageDir();
+        $src=self::resize($upload['tmp_name'],$type,1600,$dir.'/'.$id.'.webp');
+        if($src===null){
+            $name=$id.'.'.self::UPLOAD_TYPES[$type];
+            if(!move_uploaded_file($upload['tmp_name'],$dir.'/'.$name))throw new RuntimeException('No se pudo guardar la imagen.');
+            chmod($dir.'/'.$name,0600);$src='/assets/news/'.$name;
+        }
+        if(!$gallery)return $src;
+        $thumb=self::resize($dir.'/'.basename($src),str_ends_with($src,'.webp')?'image/webp':$type,640,$dir.'/'.$id.'-sm.webp');
+        return ['src'=>$src,'thumb'=>$thumb??$src];
+    }
+    /** Reduce una imagen a $max px de lado mayor y la guarda en WebP. Devuelve null si no hay GD. */
+    private static function resize(string $from,string $type,int $max,string $to):?string {
+        if(!function_exists('imagewebp'))return null;
+        $img=match($type){'image/jpeg'=>@imagecreatefromjpeg($from),'image/png'=>@imagecreatefrompng($from),'image/webp'=>@imagecreatefromwebp($from),default=>false};
+        if(!$img)return null;
+        if($type==='image/jpeg'&&function_exists('exif_read_data')){
+            $o=@exif_read_data($from)['Orientation']??1;
+            $img=match($o){3=>imagerotate($img,180,0),6=>imagerotate($img,-90,0),8=>imagerotate($img,90,0),default=>$img};
+        }
+        $w=imagesx($img);$h=imagesy($img);$scale=min(1,$max/max($w,$h));
+        if($scale<1)$img=imagescale($img,(int)round($w*$scale),(int)round($h*$scale),IMG_BICUBIC);
+        $ok=imagewebp($img,$to,82);imagedestroy($img);
+        if(!$ok)return null;
+        chmod($to,0600);
+        return '/assets/news/'.basename($to);
     }
 
     /** Noticias publicadas, en el formato que lee el sitio. */

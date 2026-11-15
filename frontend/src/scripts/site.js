@@ -11,7 +11,7 @@ const STRINGS={
     notSaved:'No pudimos registrar la consulta. Revisa los campos o escribe por WhatsApp.',
     saved:ref=>`Tu consulta quedó registrada con el código ${ref}. Alte Tour podrá revisarla en su panel. Esto no confirma una reserva ni disponibilidad.`,
     timeout:'La conexión tardó demasiado. Tu solicitud podría haberse registrado: reintenta sin cambiar los datos para evitar duplicados, o consulta por WhatsApp.',
-    openMenu:'Abrir menú',closeMenu:'Cerrar menú'},
+    openMenu:'Abrir menú',closeMenu:'Cerrar menú',galleryClose:'Cerrar',galleryPrev:'Foto anterior',galleryNext:'Foto siguiente'},
   en:{collapse:'Collapse all ',expand:'Expand all ',one:'published program',many:'published programs',prepare:'Prepare my inquiry ',continueWa:'Continue my inquiry on WhatsApp ',
     waText:(v,interest)=>`Hello Alte Tour, I am ${v.name}. I am interested in ${interest}. We are ${v.travelers} travelers. ${v.message||''}`,
     staticReady:'Your inquiry is ready. Use the WhatsApp link to send it to Alte Tour. Your details are not stored on this site.',
@@ -20,7 +20,7 @@ const STRINGS={
     notSaved:'We could not register your inquiry. Check the fields or write to us on WhatsApp.',
     saved:ref=>`Your inquiry was registered with code ${ref}. Alte Tour will review it. This does not confirm a booking or availability.`,
     timeout:'The connection took too long. Your request may have been registered: try again without changing the details to avoid duplicates, or contact us on WhatsApp.',
-    openMenu:'Open menu',closeMenu:'Close menu'},
+    openMenu:'Open menu',closeMenu:'Close menu',galleryClose:'Close',galleryPrev:'Previous photo',galleryNext:'Next photo'},
   pt:{collapse:'Recolher todos ',expand:'Expandir todos ',one:'programa publicado',many:'programas publicados',prepare:'Preparar minha consulta ',continueWa:'Continuar minha consulta pelo WhatsApp ',
     waText:(v,interest)=>`Olá, Alte Tour, sou ${v.name}. Tenho interesse em ${interest}. Somos ${v.travelers} viajantes. ${v.message||''}`,
     staticReady:'Sua consulta está pronta. Use o link do WhatsApp para enviá-la à Alte Tour. Seus dados não são armazenados neste site.',
@@ -29,7 +29,7 @@ const STRINGS={
     notSaved:'Não conseguimos registrar a consulta. Revise os campos ou escreva pelo WhatsApp.',
     saved:ref=>`Sua consulta foi registrada com o código ${ref}. A Alte Tour vai analisá-la. Isso não confirma uma reserva nem disponibilidade.`,
     timeout:'A conexão demorou demais. Sua solicitação pode ter sido registrada: tente novamente sem alterar os dados para evitar duplicidade, ou consulte pelo WhatsApp.',
-    openMenu:'Abrir menu',closeMenu:'Fechar menu'},
+    openMenu:'Abrir menu',closeMenu:'Fechar menu',galleryClose:'Fechar',galleryPrev:'Foto anterior',galleryNext:'Próxima foto'},
 };
 const L=()=>STRINGS[(document.documentElement.lang||'es').slice(0,2)]||STRINGS.es;
 // Ruta sin prefijo de GitHub Pages ni de idioma (/en/, /pt/).
@@ -93,6 +93,23 @@ export function initPage(){
     const initial=new URLSearchParams(window.location.search).get('categoria');
     if(initial&&newsButtons.some(b=>b.dataset.newsFilter===initial))applyNews(initial);
   }
+  // Galería de noticias: abre las fotos en un visor a pantalla completa.
+  main.querySelectorAll('[data-gallery]').forEach(grid=>{
+    const items=[...grid.querySelectorAll('[data-gallery-item]')];let dlg=null,idx=0;
+    const show=i=>{idx=(i+items.length)%items.length;const a=items[idx],img=dlg.querySelector('img');img.src=a.href;img.alt=a.querySelector('img').alt;dlg.querySelector('.lightbox-count').textContent=`${idx+1} / ${items.length}`;};
+    const open=i=>{
+      dlg=document.createElement('dialog');dlg.className='lightbox';
+      dlg.innerHTML=`<img alt=""><p class="lightbox-count"></p><button type="button" class="lightbox-close" aria-label="${L().galleryClose}">×</button>${items.length>1?`<button type="button" class="lightbox-prev" aria-label="${L().galleryPrev}">‹</button><button type="button" class="lightbox-next" aria-label="${L().galleryNext}">›</button>`:''}`;
+      dlg.querySelector('.lightbox-close').addEventListener('click',()=>dlg.close());
+      dlg.querySelector('.lightbox-prev')?.addEventListener('click',()=>show(idx-1));
+      dlg.querySelector('.lightbox-next')?.addEventListener('click',()=>show(idx+1));
+      dlg.addEventListener('click',ev=>{if(ev.target===dlg)dlg.close();});
+      dlg.addEventListener('keydown',ev=>{if(ev.key==='ArrowLeft')show(idx-1);else if(ev.key==='ArrowRight')show(idx+1);});
+      dlg.addEventListener('close',()=>{const back=items[idx];dlg.remove();dlg=null;back.focus();});
+      document.body.appendChild(dlg);show(i);dlg.showModal();
+    };
+    items.forEach((a,i)=>a.addEventListener('click',ev=>{ev.preventDefault();open(i);}));
+  });
   main.querySelectorAll('[data-lead-form]').forEach(form=>{
     const interest = new URLSearchParams(window.__ALTE_QUERY__ || window.location.search).get('interes');
     const sel=form.querySelector('[name="interest"]');

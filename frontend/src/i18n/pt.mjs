@@ -578,6 +578,7 @@ export default {
   "Agencia": "Agência",
   "Pronto habrá novedades en esta categoría.": "Em breve haverá novidades nesta categoria.",
   "Mientras tanto, puedes conversar con nosotros sobre tu próximo viaje.": "Enquanto isso, você pode conversar com a gente sobre sua próxima viagem.",
+  "Galería de fotos": "Galeria de fotos",
   "Volver a noticias": "Voltar para notícias",
   "SIGUE LEYENDO": "CONTINUE LENDO",
   "Más noticias.": "Mais notícias.",

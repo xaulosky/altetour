@@ -14,11 +14,13 @@ $frontend=dirname(__DIR__,2).'/frontend';
 if(!is_dir($frontend.'/src/data'))throw new RuntimeException('No se encontró frontend/src/data junto al backend.');
 $copied=0;$assets=$frontend.'/public/assets/news';
 foreach($news as $n){
-    $file=News::uploadedFile($n['image']);
-    if(!$file)continue;
-    if(!is_dir($assets)&&!mkdir($assets,0755,true))throw new RuntimeException('No se pudo crear '.$assets);
-    if(!copy($file,$assets.'/'.basename($file)))throw new RuntimeException('No se pudo copiar '.basename($file));
-    $copied++;
+    foreach(News::imagePaths($n) as $path){
+        $file=News::uploadedFile($path);
+        if(!$file)continue;
+        if(!is_dir($assets)&&!mkdir($assets,0755,true))throw new RuntimeException('No se pudo crear '.$assets);
+        if(!copy($file,$assets.'/'.basename($file)))throw new RuntimeException('No se pudo copiar '.basename($file));
+        $copied++;
+    }
 }
 file_put_contents($frontend.'/src/data/news.json',$json);
 fwrite(STDOUT,count($news)." noticias publicadas exportadas a frontend/src/data/news.json; $copied imágenes copiadas.\n");

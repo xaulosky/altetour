@@ -1,31 +1,391 @@
 [
   {
-    "slug": "turquia-imbatible-2027",
-    "category": "viajes",
+    "slug": "fam-tour-brasil-vinas-biobio",
+    "category": "actividades",
     "status": "published",
-    "date": "2026-11-13",
-    "image": "/assets/capadocia.webp",
-    "linkUrl": "/viajes/turquia-2027/",
+    "date": "2026-11-15",
+    "image": "/assets/news/fam-tour-brasil-vinas-biobio.webp",
+    "linkUrl": "",
+    "gallery": [
+      {
+        "src": "/assets/news/fam-tour-brasil-vinas-biobio-01.webp",
+        "thumb": "/assets/news/fam-tour-brasil-vinas-biobio-01-sm.webp"
+      },
+      {
+        "src": "/assets/news/fam-tour-brasil-vinas-biobio-02.webp",
+        "thumb": "/assets/news/fam-tour-brasil-vinas-biobio-02-sm.webp"
+      },
+      {
+        "src": "/assets/news/fam-tour-brasil-vinas-biobio-03.webp",
+        "thumb": "/assets/news/fam-tour-brasil-vinas-biobio-03-sm.webp"
+      },
+      {
+        "src": "/assets/news/fam-tour-brasil-vinas-biobio-04.webp",
+        "thumb": "/assets/news/fam-tour-brasil-vinas-biobio-04-sm.webp"
+      },
+      {
+        "src": "/assets/news/fam-tour-brasil-vinas-biobio-05.webp",
+        "thumb": "/assets/news/fam-tour-brasil-vinas-biobio-05-sm.webp"
+      },
+      {
+        "src": "/assets/news/fam-tour-brasil-vinas-biobio-06.webp",
+        "thumb": "/assets/news/fam-tour-brasil-vinas-biobio-06-sm.webp"
+      },
+      {
+        "src": "/assets/news/fam-tour-brasil-vinas-biobio-07.webp",
+        "thumb": "/assets/news/fam-tour-brasil-vinas-biobio-07-sm.webp"
+      },
+      {
+        "src": "/assets/news/fam-tour-brasil-vinas-biobio-08.webp",
+        "thumb": "/assets/news/fam-tour-brasil-vinas-biobio-08-sm.webp"
+      },
+      {
+        "src": "/assets/news/fam-tour-brasil-vinas-biobio-09.webp",
+        "thumb": "/assets/news/fam-tour-brasil-vinas-biobio-09-sm.webp"
+      },
+      {
+        "src": "/assets/news/fam-tour-brasil-vinas-biobio-10.webp",
+        "thumb": "/assets/news/fam-tour-brasil-vinas-biobio-10-sm.webp"
+      },
+      {
+        "src": "/assets/news/fam-tour-brasil-vinas-biobio-11.webp",
+        "thumb": "/assets/news/fam-tour-brasil-vinas-biobio-11-sm.webp"
+      }
+    ],
     "es": {
-      "title": "Turquía Imbatible 2027: abrimos consultas para la salida de mayo",
-      "summary": "Un circuito de 10 días y 9 noches por Estambul, Capadocia, Pamukkale y el Egeo, con salida desde Santiago el 7 de mayo de 2027 y guía de habla hispana.",
-      "body": "Ya puedes consultar por Turquía Imbatible 2027, nuestro programa de categoría Platino con salida desde Santiago el 7 de mayo de 2027 y regreso el 18 de mayo.\n\nEl circuito recorre Estambul, Ankara, Capadocia, Pamukkale, Selçuk, Izmir o Kuşadası, Chios y Bursa, con acompañamiento de habla hispana. Los valores parten en USD 3.750 por persona en habitación doble, más una tasa local obligatoria de USD 5 por persona por noche que se paga en destino.\n\nRevisa el itinerario día a día, lo que incluye el programa y sus condiciones antes de cotizar. La disponibilidad se confirma directamente con Alte Tour.",
-      "imageAlt": "Paisaje ilustrativo de los valles de Capadocia con globos al amanecer",
-      "linkLabel": "Ver el programa completo"
+      "title": "Fam tour por las viñas de la provincia de Biobío con operadores del mercado brasileño",
+      "summary": "Recibimos a tour operadores que venden el destino Brasil en un recorrido por viñas, bodegas y mesas de la provincia de Biobío.",
+      "body": "Alte Tour acompañó un fam tour con tour operadores que venden el destino Brasil, en un recorrido por las viñas de la provincia de Biobío.\n\nDurante la ruta, el grupo conoció viñedos y bodegas del territorio, compartió con productores y vivió la gastronomía local, con almuerzos y cenas que muestran la hospitalidad del sur de Chile.\n\nEste tipo de viajes de familiarización permite que quienes venden un destino lo conozcan en terreno. Así el Biobío gana visibilidad como un lugar para el enoturismo y las experiencias rurales.",
+      "imageAlt": "Grupo del fam tour junto a anfitriones en una viña de la provincia de Biobío",
+      "linkLabel": ""
     },
     "en": {
-      "title": "Turkey Imbatible 2027: inquiries now open for the May departure",
-      "summary": "A 10-day, 9-night circuit through Istanbul, Cappadocia, Pamukkale and the Aegean, departing from Santiago on May 7, 2027, with a Spanish-speaking guide.",
-      "body": "You can now ask about Turkey Imbatible 2027, our Platinum-category program departing from Santiago on May 7, 2027 and returning on May 18.\n\nThe circuit covers Istanbul, Ankara, Cappadocia, Pamukkale, Selçuk, Izmir or Kuşadası, Chios and Bursa, with Spanish-speaking guidance. Prices start at USD 3,750 per person in a double room, plus a mandatory local fee of USD 5 per person per night, paid at the destination.\n\nReview the day-by-day itinerary, what the program includes and its conditions before requesting a quote. Availability is confirmed directly with Alte Tour.",
-      "imageAlt": "Illustrative landscape of the Cappadocia valleys with hot-air balloons at sunrise",
-      "linkLabel": "See the full program"
+      "title": "Fam tour through the vineyards of Biobío province with operators from the Brazilian market",
+      "summary": "We hosted tour operators who sell Brazil as a destination on a route through vineyards, wineries and tables in Biobío province.",
+      "body": "Alte Tour accompanied a fam tour with tour operators who sell Brazil as a destination, on a route through the vineyards of Biobío province.\n\nAlong the way, the group visited local vineyards and wineries, met producers and enjoyed the regional cuisine, with lunches and dinners that showcase the hospitality of southern Chile.\n\nFamiliarization trips like this let the people who sell a destination get to know it first-hand. They help Biobío gain visibility as a place for wine tourism and rural experiences.",
+      "imageAlt": "Fam tour group with hosts at a vineyard in Biobío province",
+      "linkLabel": ""
     },
     "pt": {
-      "title": "Turquia Imbatible 2027: consultas abertas para a saída de maio",
-      "summary": "Um circuito de 10 dias e 9 noites por Istambul, Capadócia, Pamukkale e o Egeu, com saída de Santiago em 7 de maio de 2027 e guia de língua espanhola.",
-      "body": "Você já pode consultar sobre o Turquia Imbatible 2027, nosso programa de categoria Platina com saída de Santiago em 7 de maio de 2027 e retorno em 18 de maio.\n\nO circuito percorre Istambul, Ancara, Capadócia, Pamukkale, Selçuk, Izmir ou Kuşadası, Chios e Bursa, com acompanhamento em espanhol. Os valores partem de USD 3.750 por pessoa em quarto duplo, mais uma taxa local obrigatória de USD 5 por pessoa por noite, paga no destino.\n\nConfira o roteiro dia a dia, o que o programa inclui e suas condições antes de pedir um orçamento. A disponibilidade é confirmada diretamente com a Alte Tour.",
-      "imageAlt": "Paisagem ilustrativa dos vales da Capadócia com balões ao amanhecer",
-      "linkLabel": "Ver o programa completo"
+      "title": "Fam tour pelas vinícolas da província de Biobío com operadores do mercado brasileiro",
+      "summary": "Recebemos operadores de turismo que vendem o destino Brasil em um roteiro por vinhedos, vinícolas e mesas da província de Biobío.",
+      "body": "A Alte Tour acompanhou um fam tour com operadores de turismo que vendem o destino Brasil, em um roteiro pelas vinícolas da província de Biobío.\n\nNo percurso, o grupo conheceu vinhedos e vinícolas da região, conversou com produtores e provou a gastronomia local, com almoços e jantares que mostram a hospitalidade do sul do Chile.\n\nViagens de familiarização como esta permitem que quem vende um destino o conheça de perto. Assim, o Biobío ganha visibilidade como lugar para o enoturismo e as experiências rurais.",
+      "imageAlt": "Grupo do fam tour com anfitriões em uma vinícola da província de Biobío",
+      "linkLabel": ""
+    }
+  },
+  {
+    "slug": "mision-tecnica-comercial-mendoza",
+    "category": "viajes",
+    "status": "published",
+    "date": "2026-11-15",
+    "image": "/assets/news/mision-tecnica-comercial-mendoza.webp",
+    "linkUrl": "",
+    "gallery": [
+      {
+        "src": "/assets/news/mision-tecnica-comercial-mendoza-01.webp",
+        "thumb": "/assets/news/mision-tecnica-comercial-mendoza-01-sm.webp"
+      },
+      {
+        "src": "/assets/news/mision-tecnica-comercial-mendoza-02.webp",
+        "thumb": "/assets/news/mision-tecnica-comercial-mendoza-02-sm.webp"
+      },
+      {
+        "src": "/assets/news/mision-tecnica-comercial-mendoza-03.webp",
+        "thumb": "/assets/news/mision-tecnica-comercial-mendoza-03-sm.webp"
+      },
+      {
+        "src": "/assets/news/mision-tecnica-comercial-mendoza-04.webp",
+        "thumb": "/assets/news/mision-tecnica-comercial-mendoza-04-sm.webp"
+      },
+      {
+        "src": "/assets/news/mision-tecnica-comercial-mendoza-05.webp",
+        "thumb": "/assets/news/mision-tecnica-comercial-mendoza-05-sm.webp"
+      },
+      {
+        "src": "/assets/news/mision-tecnica-comercial-mendoza-06.webp",
+        "thumb": "/assets/news/mision-tecnica-comercial-mendoza-06-sm.webp"
+      },
+      {
+        "src": "/assets/news/mision-tecnica-comercial-mendoza-07.webp",
+        "thumb": "/assets/news/mision-tecnica-comercial-mendoza-07-sm.webp"
+      },
+      {
+        "src": "/assets/news/mision-tecnica-comercial-mendoza-08.webp",
+        "thumb": "/assets/news/mision-tecnica-comercial-mendoza-08-sm.webp"
+      },
+      {
+        "src": "/assets/news/mision-tecnica-comercial-mendoza-09.webp",
+        "thumb": "/assets/news/mision-tecnica-comercial-mendoza-09-sm.webp"
+      },
+      {
+        "src": "/assets/news/mision-tecnica-comercial-mendoza-10.webp",
+        "thumb": "/assets/news/mision-tecnica-comercial-mendoza-10-sm.webp"
+      },
+      {
+        "src": "/assets/news/mision-tecnica-comercial-mendoza-11.webp",
+        "thumb": "/assets/news/mision-tecnica-comercial-mendoza-11-sm.webp"
+      }
+    ],
+    "es": {
+      "title": "Misión técnica y comercial a Mendoza: turismo rural y enoturismo",
+      "summary": "Empresarios de la Red Mercado Florida, de la comuna de Florida, recorrieron Mendoza entre el 21 y el 24 de agosto de 2026 para conocer modelos de turismo rural, enoturismo y gastronomía.",
+      "body": "Entre el 21 y el 24 de agosto de 2026, una delegación de empresarios de la Red Mercado Florida, de la comuna de Florida en la Región del Biobío, realizó una misión técnica y comercial a Mendoza, Argentina.\n\nEl objetivo fue observar en terreno modelos de negocio mendocinos ligados al turismo rural, el enoturismo, la gastronomía y la producción de alimentos, para fortalecer el diseño, la calidad y la comercialización de la propia ruta turística de Florida.\n\nEl programa incluyó visitas a Qualtaye, Rosell Boher Lodge & Spa, Borravino Cerámicas, Chachingo Craft Beer, Bodega Clos de Chacras y Casa El Enemigo. El grupo participó en degustaciones guiadas, almuerzos maridados y recorridos por bodegas, viñedos y huertas, y también hizo un city tour por Mendoza y el Parque General San Martín.\n\nEn cada visita, los empresarios presentaron su ruta y sus productos a anfitriones y operadores de Mendoza. Así se sentaron las bases para futuras alianzas, intercambio de visitantes y promoción cruzada entre ambos territorios.",
+      "imageAlt": "Huevos de hormigón para vinificación en una bodega de Mendoza",
+      "linkLabel": ""
+    },
+    "en": {
+      "title": "Technical and trade mission to Mendoza: rural tourism and wine tourism",
+      "summary": "Business owners from the Red Mercado Florida network, in the Florida district, toured Mendoza from August 21 to 24, 2026, to learn about rural tourism, wine tourism and gastronomy models.",
+      "body": "From August 21 to 24, 2026, a delegation of business owners from the Red Mercado Florida network, in the Florida district of the Biobío Region, carried out a technical and trade mission to Mendoza, Argentina.\n\nThe goal was to observe first-hand business models in Mendoza linked to rural tourism, wine tourism, gastronomy and food production, in order to strengthen the design, quality and marketing of Florida's own tourist route.\n\nThe program included visits to Qualtaye, Rosell Boher Lodge & Spa, Borravino Cerámicas, Chachingo Craft Beer, Bodega Clos de Chacras and Casa El Enemigo. The group took part in guided tastings, wine-paired lunches and tours of wineries, vineyards and kitchen gardens, and also took a city tour of Mendoza and Parque General San Martín.\n\nAt each visit, the business owners presented their route and products to hosts and operators in Mendoza. This laid the groundwork for future partnerships, visitor exchanges and cross-promotion between both territories.",
+      "imageAlt": "Concrete eggs used for winemaking at a winery in Mendoza",
+      "linkLabel": ""
+    },
+    "pt": {
+      "title": "Missão técnica e comercial a Mendoza: turismo rural e enoturismo",
+      "summary": "Empresários da Red Mercado Florida, da comuna de Florida, percorreram Mendoza de 21 a 24 de agosto de 2026 para conhecer modelos de turismo rural, enoturismo e gastronomia.",
+      "body": "De 21 a 24 de agosto de 2026, uma delegação de empresários da Red Mercado Florida, da comuna de Florida, na Região do Biobío, realizou uma missão técnica e comercial a Mendoza, na Argentina.\n\nO objetivo foi observar de perto modelos de negócio de Mendoza ligados ao turismo rural, ao enoturismo, à gastronomia e à produção de alimentos, para fortalecer o desenho, a qualidade e a comercialização da própria rota turística de Florida.\n\nO programa incluiu visitas a Qualtaye, Rosell Boher Lodge & Spa, Borravino Cerámicas, Chachingo Craft Beer, Bodega Clos de Chacras e Casa El Enemigo. O grupo participou de degustações guiadas, almoços harmonizados e passeios por vinícolas, vinhedos e hortas, além de um city tour por Mendoza e pelo Parque General San Martín.\n\nEm cada visita, os empresários apresentaram sua rota e seus produtos a anfitriões e operadores de Mendoza. Assim foram lançadas as bases para futuras parcerias, intercâmbio de visitantes e promoção cruzada entre os dois territórios.",
+      "imageAlt": "Ovos de concreto para vinificação em uma vinícola de Mendoza",
+      "linkLabel": ""
+    }
+  },
+  {
+    "slug": "vina-pallauquen-golf-rural-yumbel",
+    "category": "actividades",
+    "status": "published",
+    "date": "2026-11-15",
+    "image": "/assets/news/vina-pallauquen-golf-rural-yumbel.webp",
+    "linkUrl": "",
+    "gallery": [
+      {
+        "src": "/assets/news/vina-pallauquen-golf-rural-yumbel-01.webp",
+        "thumb": "/assets/news/vina-pallauquen-golf-rural-yumbel-01-sm.webp"
+      },
+      {
+        "src": "/assets/news/vina-pallauquen-golf-rural-yumbel-02.webp",
+        "thumb": "/assets/news/vina-pallauquen-golf-rural-yumbel-02-sm.webp"
+      },
+      {
+        "src": "/assets/news/vina-pallauquen-golf-rural-yumbel-03.webp",
+        "thumb": "/assets/news/vina-pallauquen-golf-rural-yumbel-03-sm.webp"
+      },
+      {
+        "src": "/assets/news/vina-pallauquen-golf-rural-yumbel-04.webp",
+        "thumb": "/assets/news/vina-pallauquen-golf-rural-yumbel-04-sm.webp"
+      }
+    ],
+    "es": {
+      "title": "Visita técnica a Viña Fundo Pallauquén, en Yumbel, donde se puede jugar golf rural",
+      "summary": "Recorrimos Viña Fundo Pallauquén, en Yumbel, una viña del Biobío que suma el golf rural a su propuesta de enoturismo.",
+      "body": "Realizamos una visita técnica a Viña Fundo Pallauquén, en la comuna de Yumbel, para conocer su propuesta para visitantes.\n\nAdemás de sus viñedos y vinos, la viña ofrece una experiencia poco común en la región: jugar golf rural entre el campo y las parras. Es una alternativa distinta para grupos, empresas y viajeros que buscan actividades al aire libre en el Biobío.\n\nEste tipo de visitas nos permite conocer en persona los lugares que incorporamos en nuestros programas de turismo receptivo.",
+      "imageAlt": "Visitante practicando golf rural en el campo de Viña Fundo Pallauquén",
+      "linkLabel": ""
+    },
+    "en": {
+      "title": "Technical visit to Viña Fundo Pallauquén in Yumbel, where you can play rural golf",
+      "summary": "We toured Viña Fundo Pallauquén in Yumbel, a Biobío winery that adds rural golf to its wine tourism offer.",
+      "body": "We made a technical visit to Viña Fundo Pallauquén, in the Yumbel district, to get to know its offer for visitors.\n\nBesides its vineyards and wines, the winery offers an experience that is rare in the region: playing rural golf among the fields and the vines. It is a different option for groups, companies and travelers looking for outdoor activities in Biobío.\n\nVisits like this let us get to know in person the places we include in our inbound tourism programs.",
+      "imageAlt": "Visitor playing rural golf on the grounds of Viña Fundo Pallauquén",
+      "linkLabel": ""
+    },
+    "pt": {
+      "title": "Visita técnica à Viña Fundo Pallauquén, em Yumbel, onde é possível jogar golfe rural",
+      "summary": "Visitamos a Viña Fundo Pallauquén, em Yumbel, uma vinícola do Biobío que soma o golfe rural à sua proposta de enoturismo.",
+      "body": "Fizemos uma visita técnica à Viña Fundo Pallauquén, na comuna de Yumbel, para conhecer sua proposta para visitantes.\n\nAlém dos vinhedos e vinhos, a vinícola oferece uma experiência pouco comum na região: jogar golfe rural entre o campo e as parreiras. É uma alternativa diferente para grupos, empresas e viajantes que procuram atividades ao ar livre no Biobío.\n\nEsse tipo de visita nos permite conhecer pessoalmente os lugares que incluímos em nossos programas de turismo receptivo.",
+      "imageAlt": "Visitante jogando golfe rural no campo da Viña Fundo Pallauquén",
+      "linkLabel": ""
+    }
+  },
+  {
+    "slug": "noches-de-museos-vina-pallauquen",
+    "category": "eventos",
+    "status": "published",
+    "date": "2026-11-15",
+    "image": "/assets/news/noches-de-museos-vina-pallauquen.webp",
+    "linkUrl": "",
+    "gallery": [
+      {
+        "src": "/assets/news/noches-de-museos-vina-pallauquen-01.webp",
+        "thumb": "/assets/news/noches-de-museos-vina-pallauquen-01-sm.webp"
+      },
+      {
+        "src": "/assets/news/noches-de-museos-vina-pallauquen-02.webp",
+        "thumb": "/assets/news/noches-de-museos-vina-pallauquen-02-sm.webp"
+      }
+    ],
+    "es": {
+      "title": "Noches de Museos en Viña Pallauquén: patrimonio entre los viñedos",
+      "summary": "Un museo itinerante llevó el patrimonio del territorio a Viña Pallauquén, con el trabajo de las bordadoras patrimoniales de Yumbel.",
+      "body": "Hay tardes en que una viña se convierte en un lugar de encuentro. Así vivimos Noches de Museos en Viña Pallauquén, donde un museo itinerante llevó el patrimonio de nuestro territorio entre los viñedos.\n\nPudimos conocer el trabajo de las bordadoras patrimoniales de Yumbel y apreciar, en cada puntada, una tradición que sigue viva. Y mientras caía el sol, el paisaje nos regaló un cierre maravilloso.\n\nEsta experiencia nos muestra todo lo que puede pasar en una viña. Una exposición, una muestra de oficios o un encuentro con quienes mantienen vivas nuestras tradiciones son también formas de conocer y disfrutar el Biobío.",
+      "imageAlt": "Visitantes bajo el corredor de Viña Pallauquén durante Noches de Museos",
+      "linkLabel": ""
+    },
+    "en": {
+      "title": "Museum Nights at Viña Pallauquén: heritage among the vineyards",
+      "summary": "A traveling museum brought the region's heritage to Viña Pallauquén, featuring the work of the heritage embroiderers of Yumbel.",
+      "body": "Some afternoons, a winery becomes a meeting place. That is how we experienced Museum Nights at Viña Pallauquén, where a traveling museum brought our region's heritage among the vineyards.\n\nWe saw the work of the heritage embroiderers of Yumbel and could appreciate, in every stitch, a tradition that is still alive. And as the sun went down, the landscape gave us a wonderful close to the day.\n\nThis experience shows everything that can happen at a winery. An exhibition, a display of traditional crafts or a meeting with those who keep our traditions alive are also ways to discover and enjoy Biobío.",
+      "imageAlt": "Visitors under the porch at Viña Pallauquén during Museum Nights",
+      "linkLabel": ""
+    },
+    "pt": {
+      "title": "Noites de Museus na Viña Pallauquén: patrimônio entre os vinhedos",
+      "summary": "Um museu itinerante levou o patrimônio da região à Viña Pallauquén, com o trabalho das bordadeiras patrimoniais de Yumbel.",
+      "body": "Há tardes em que uma vinícola se transforma em ponto de encontro. Foi assim que vivemos as Noites de Museus na Viña Pallauquén, onde um museu itinerante levou o patrimônio da nossa região para entre os vinhedos.\n\nConhecemos o trabalho das bordadeiras patrimoniais de Yumbel e pudemos apreciar, em cada ponto, uma tradição que continua viva. E, enquanto o sol se punha, a paisagem nos deu um encerramento maravilhoso.\n\nEssa experiência mostra tudo o que pode acontecer em uma vinícola. Uma exposição, uma mostra de ofícios ou um encontro com quem mantém vivas as nossas tradições também são formas de conhecer e aproveitar o Biobío.",
+      "imageAlt": "Visitantes sob a varanda da Viña Pallauquén durante as Noites de Museus",
+      "linkLabel": ""
+    }
+  },
+  {
+    "slug": "cumbre-mundial-enoturismo-alentejo-2026",
+    "category": "eventos",
+    "status": "published",
+    "date": "2026-11-15",
+    "image": "/assets/news/cumbre-mundial-enoturismo-alentejo-2026.webp",
+    "linkUrl": "",
+    "gallery": [
+      {
+        "src": "/assets/news/cumbre-mundial-enoturismo-alentejo-2026-01.webp",
+        "thumb": "/assets/news/cumbre-mundial-enoturismo-alentejo-2026-01-sm.webp"
+      },
+      {
+        "src": "/assets/news/cumbre-mundial-enoturismo-alentejo-2026-02.webp",
+        "thumb": "/assets/news/cumbre-mundial-enoturismo-alentejo-2026-02-sm.webp"
+      },
+      {
+        "src": "/assets/news/cumbre-mundial-enoturismo-alentejo-2026-03.webp",
+        "thumb": "/assets/news/cumbre-mundial-enoturismo-alentejo-2026-03-sm.webp"
+      },
+      {
+        "src": "/assets/news/cumbre-mundial-enoturismo-alentejo-2026-04.webp",
+        "thumb": "/assets/news/cumbre-mundial-enoturismo-alentejo-2026-04-sm.webp"
+      }
+    ],
+    "es": {
+      "title": "Alte Tour en la 3ª Cumbre Mundial de Enoturismo, en Alentejo, Portugal",
+      "summary": "Participamos en la tercera Cumbre Mundial de Enoturismo, realizada en 2026 en el Alentejo, Portugal.",
+      "body": "Alte Tour estuvo presente en la 3ª Cumbre Mundial de Enoturismo, realizada en 2026 en el Alentejo, Portugal.\n\nEl encuentro reunió a representantes de distintos países para intercambiar experiencias sobre el turismo del vino, en jornadas de trabajo y visitas a la región.\n\nParticipar en estos espacios nos permite conocer tendencias del enoturismo y crear vínculos con otros destinos, y llevar el Biobío a una conversación internacional.",
+      "imageAlt": "Participantes de la 3ª Cumbre Mundial de Enoturismo en el Alentejo, Portugal",
+      "linkLabel": ""
+    },
+    "en": {
+      "title": "Alte Tour at the 3rd World Wine Tourism Summit in Alentejo, Portugal",
+      "summary": "We took part in the third World Wine Tourism Summit, held in 2026 in Alentejo, Portugal.",
+      "body": "Alte Tour was present at the 3rd World Wine Tourism Summit, held in 2026 in Alentejo, Portugal.\n\nThe event brought together representatives from different countries to share experiences on wine tourism, through working sessions and visits around the region.\n\nTaking part in these forums lets us learn about trends in wine tourism, build ties with other destinations and bring Biobío into an international conversation.",
+      "imageAlt": "Participants of the 3rd World Wine Tourism Summit in Alentejo, Portugal",
+      "linkLabel": ""
+    },
+    "pt": {
+      "title": "Alte Tour na 3ª Cúpula Mundial de Enoturismo, no Alentejo, Portugal",
+      "summary": "Participamos da terceira Cúpula Mundial de Enoturismo, realizada em 2026 no Alentejo, em Portugal.",
+      "body": "A Alte Tour esteve presente na 3ª Cúpula Mundial de Enoturismo, realizada em 2026 no Alentejo, em Portugal.\n\nO encontro reuniu representantes de diferentes países para trocar experiências sobre o turismo do vinho, em sessões de trabalho e visitas pela região.\n\nParticipar desses espaços nos permite conhecer tendências do enoturismo, criar vínculos com outros destinos e levar o Biobío para uma conversa internacional.",
+      "imageAlt": "Participantes da 3ª Cúpula Mundial de Enoturismo no Alentejo, Portugal",
+      "linkLabel": ""
+    }
+  },
+  {
+    "slug": "cumbre-mundial-enoturismo-yantai-china",
+    "category": "eventos",
+    "status": "published",
+    "date": "2026-11-15",
+    "image": "/assets/news/cumbre-mundial-enoturismo-yantai-china.webp",
+    "linkUrl": "",
+    "gallery": [
+      {
+        "src": "/assets/news/cumbre-mundial-enoturismo-yantai-china-01.webp",
+        "thumb": "/assets/news/cumbre-mundial-enoturismo-yantai-china-01-sm.webp"
+      },
+      {
+        "src": "/assets/news/cumbre-mundial-enoturismo-yantai-china-02.webp",
+        "thumb": "/assets/news/cumbre-mundial-enoturismo-yantai-china-02-sm.webp"
+      },
+      {
+        "src": "/assets/news/cumbre-mundial-enoturismo-yantai-china-03.webp",
+        "thumb": "/assets/news/cumbre-mundial-enoturismo-yantai-china-03-sm.webp"
+      },
+      {
+        "src": "/assets/news/cumbre-mundial-enoturismo-yantai-china-04.webp",
+        "thumb": "/assets/news/cumbre-mundial-enoturismo-yantai-china-04-sm.webp"
+      }
+    ],
+    "es": {
+      "title": "Yantai, China: Alte Tour organizó la logística de la delegación chilena en la 2ª Cumbre Mundial de Enoturismo",
+      "summary": "En la Segunda Cumbre Mundial de Enoturismo, en Yantai, Alte Tour estuvo a cargo de la organización integral de la logística de la delegación de Chile.",
+      "body": "En Yantai, China, durante la Segunda Cumbre Mundial de Enoturismo, Alte Tour Agencia de Viajes estuvo a cargo de la organización integral de la logística de la delegación de Chile en la cumbre.\n\nCoordinar un viaje así implica ocuparse de cada detalle, desde los traslados hasta la participación del grupo en el programa oficial. Es el mismo trabajo que hacemos en nuestras misiones comerciales y viajes de grupo.\n\nLa cumbre reunió a representantes de distintos países en torno al turismo del vino, una conversación en la que Chile y el Biobío tienen mucho que aportar.",
+      "imageAlt": "Delegaciones en el escenario de la Segunda Cumbre Mundial de Enoturismo en Yantai, China",
+      "linkLabel": ""
+    },
+    "en": {
+      "title": "Yantai, China: Alte Tour organized the Chilean delegation's logistics at the 2nd World Wine Tourism Summit",
+      "summary": "At the Second World Wine Tourism Summit in Yantai, Alte Tour was in charge of organizing all the logistics for Chile's delegation.",
+      "body": "In Yantai, China, during the Second World Wine Tourism Summit, Alte Tour Agencia de Viajes was in charge of organizing all the logistics for Chile's delegation to the summit.\n\nCoordinating a trip like this means taking care of every detail, from transfers to the group's participation in the official program. It is the same work we do in our trade missions and group travel.\n\nThe summit brought together representatives from different countries around wine tourism, a conversation in which Chile and Biobío have a lot to contribute.",
+      "imageAlt": "Delegations on stage at the Second World Wine Tourism Summit in Yantai, China",
+      "linkLabel": ""
+    },
+    "pt": {
+      "title": "Yantai, China: a Alte Tour organizou a logística da delegação chilena na 2ª Cúpula Mundial de Enoturismo",
+      "summary": "Na Segunda Cúpula Mundial de Enoturismo, em Yantai, a Alte Tour foi responsável pela organização integral da logística da delegação do Chile.",
+      "body": "Em Yantai, na China, durante a Segunda Cúpula Mundial de Enoturismo, a Alte Tour Agencia de Viajes foi responsável pela organização integral da logística da delegação do Chile na cúpula.\n\nCoordenar uma viagem assim significa cuidar de cada detalhe, dos traslados à participação do grupo no programa oficial. É o mesmo trabalho que fazemos em nossas missões comerciais e viagens em grupo.\n\nA cúpula reuniu representantes de diferentes países em torno do turismo do vinho, uma conversa na qual o Chile e o Biobío têm muito a contribuir.",
+      "imageAlt": "Delegações no palco da Segunda Cúpula Mundial de Enoturismo em Yantai, China",
+      "linkLabel": ""
+    }
+  },
+  {
+    "slug": "prensa-biobio-chile-que-no-conocemos",
+    "category": "agencia",
+    "status": "published",
+    "date": "2026-11-15",
+    "image": "/assets/news/prensa-biobio-chile-que-no-conocemos.webp",
+    "linkUrl": "https://mariajoaodealmeida.com/bio-bio-o-chile-que-ainda-nao-conhecemos/",
+    "gallery": [],
+    "es": {
+      "title": "«Bío-Bío, un Chile que todavía no conocemos»: el vino del Biobío en la prensa portuguesa",
+      "summary": "La periodista de vinos María João de Almeida inicia una serie de artículos sobre el Biobío, sus vinos y sus productores.",
+      "body": "Después de su reciente viaje al Biobío, la periodista portuguesa María João de Almeida inició en su sitio web una serie de artículos sobre la región, sus vinos y sus productores, que irá publicando en las próximas semanas.\n\nEl primer artículo presenta la región: más fresca y húmeda que los grandes valles de la zona central, marcada sobre todo por viñedos antiguos, muchos de ellos prefiloxéricos y de pie franco, con variedades con historia y una identidad muy propia.\n\nEs una muestra del interés que despierta el Biobío como destino de enoturismo más allá de Chile. El artículo completo está en portugués, en el enlace de abajo.",
+      "imageAlt": "Viñedo con rosas en la Región del Biobío",
+      "linkLabel": "Leer el artículo"
+    },
+    "en": {
+      "title": "\"Bío-Bío, a Chile we don't know yet\": Biobío wine in the Portuguese press",
+      "summary": "Wine journalist María João de Almeida begins a series of articles about Biobío, its wines and its producers.",
+      "body": "After her recent trip to Biobío, Portuguese journalist María João de Almeida began a series of articles on her website about the region, its wines and its producers, which she will publish over the coming weeks.\n\nThe first article introduces the region: cooler and more humid than the large valleys of central Chile, and shaped mostly by old vineyards, many of them pre-phylloxera and ungrafted, with historic grape varieties and a very distinctive identity.\n\nIt shows the interest that Biobío is attracting as a wine tourism destination beyond Chile. The full article is in Portuguese, at the link below.",
+      "imageAlt": "Vineyard with roses in the Biobío Region",
+      "linkLabel": "Read the article"
+    },
+    "pt": {
+      "title": "«Bío-Bío, o Chile que ainda não conhecemos»: o vinho do Biobío na imprensa portuguesa",
+      "summary": "A jornalista de vinhos María João de Almeida inicia uma série de artigos sobre o Biobío, seus vinhos e seus produtores.",
+      "body": "Depois de sua recente viagem ao Biobío, a jornalista portuguesa María João de Almeida começou em seu site uma série de artigos sobre a região, seus vinhos e seus produtores, que vai publicar ao longo das próximas semanas.\n\nO primeiro artigo apresenta a região: mais fresca e úmida que os grandes vales da zona central, marcada sobretudo por vinhedos antigos, muitos deles pré-filoxéricos e de pé-franco, com castas históricas e uma identidade muito própria.\n\nÉ uma mostra do interesse que o Biobío desperta como destino de enoturismo além do Chile. O artigo completo está no link abaixo.",
+      "imageAlt": "Vinhedo com rosas na Região do Biobío",
+      "linkLabel": "Ler o artigo"
+    }
+  },
+  {
+    "slug": "gira-enoturismo-portugal-espana",
+    "category": "actividades",
+    "status": "published",
+    "date": "2026-11-13",
+    "image": "/assets/biobio.webp",
+    "linkUrl": "https://fedetur.cl/socio-de-fedetur-contur-biobio-obtiene-reconocimiento-internacional-por-su-trabajo-en-enoturismo-sostenible/",
+    "es": {
+      "title": "Gira técnica de enoturismo por Portugal y España",
+      "summary": "Teresa Alarcón formó parte de una delegación de enoturismo que realizó una gira técnica por Portugal y España.",
+      "body": "Teresa Alarcón participó en una delegación de enoturismo que realizó una gira técnica por Portugal y España, una experiencia de intercambio internacional vinculada al desarrollo turístico del territorio.\n\nFedetur destacó el trabajo de Contur Biobío en enoturismo sostenible, que obtuvo un reconocimiento internacional.\n\nPuedes leer la nota completa en el sitio de Fedetur.",
+      "imageAlt": "Paisaje ilustrativo de la Región del Biobío",
+      "linkLabel": "Leer la nota de Fedetur"
+    },
+    "en": {
+      "title": "Wine tourism technical tour of Portugal and Spain",
+      "summary": "Teresa Alarcón was part of a wine tourism delegation that made a technical tour of Portugal and Spain.",
+      "body": "Teresa Alarcón took part in a wine tourism delegation that made a technical tour of Portugal and Spain, an international exchange connected to the tourism development of the region.\n\nFedetur highlighted Contur Biobío's work in sustainable wine tourism, which received international recognition.\n\nYou can read the full article on the Fedetur website.",
+      "imageAlt": "Illustrative landscape of the Biobío Region",
+      "linkLabel": "Read the Fedetur article"
+    },
+    "pt": {
+      "title": "Viagem técnica de enoturismo a Portugal e Espanha",
+      "summary": "Teresa Alarcón fez parte de uma delegação de enoturismo que realizou uma viagem técnica a Portugal e Espanha.",
+      "body": "Teresa Alarcón participou de uma delegação de enoturismo que realizou uma viagem técnica a Portugal e Espanha, uma experiência de intercâmbio internacional ligada ao desenvolvimento turístico do território.\n\nA Fedetur destacou o trabalho da Contur Biobío em enoturismo sustentável, que recebeu um reconhecimento internacional.\n\nVocê pode ler a matéria completa no site da Fedetur.",
+      "imageAlt": "Paisagem ilustrativa da Região do Biobío",
+      "linkLabel": "Ler a matéria da Fedetur"
     }
   },
   {
@@ -58,32 +418,32 @@
     }
   },
   {
-    "slug": "gira-enoturismo-portugal-espana",
-    "category": "actividades",
+    "slug": "turquia-imbatible-2027",
+    "category": "viajes",
     "status": "published",
     "date": "2026-11-13",
-    "image": "/assets/biobio.webp",
-    "linkUrl": "https://fedetur.cl/socio-de-fedetur-contur-biobio-obtiene-reconocimiento-internacional-por-su-trabajo-en-enoturismo-sostenible/",
+    "image": "/assets/capadocia.webp",
+    "linkUrl": "/viajes/turquia-2027/",
     "es": {
-      "title": "Gira técnica de enoturismo por Portugal y España",
-      "summary": "Teresa Alarcón formó parte de una delegación de enoturismo que realizó una gira técnica por Portugal y España.",
-      "body": "Teresa Alarcón participó en una delegación de enoturismo que realizó una gira técnica por Portugal y España, una experiencia de intercambio internacional vinculada al desarrollo turístico del territorio.\n\nFedetur destacó el trabajo de Contur Biobío en enoturismo sostenible, que obtuvo un reconocimiento internacional.\n\nPuedes leer la nota completa en el sitio de Fedetur.",
-      "imageAlt": "Paisaje ilustrativo de la Región del Biobío",
-      "linkLabel": "Leer la nota de Fedetur"
+      "title": "Turquía Imbatible 2027: abrimos consultas para la salida de mayo",
+      "summary": "Un circuito de 10 días y 9 noches por Estambul, Capadocia, Pamukkale y el Egeo, con salida desde Santiago el 7 de mayo de 2027 y guía de habla hispana.",
+      "body": "Ya puedes consultar por Turquía Imbatible 2027, nuestro programa de categoría Platino con salida desde Santiago el 7 de mayo de 2027 y regreso el 18 de mayo.\n\nEl circuito recorre Estambul, Ankara, Capadocia, Pamukkale, Selçuk, Izmir o Kuşadası, Chios y Bursa, con acompañamiento de habla hispana. Los valores parten en USD 3.750 por persona en habitación doble, más una tasa local obligatoria de USD 5 por persona por noche que se paga en destino.\n\nRevisa el itinerario día a día, lo que incluye el programa y sus condiciones antes de cotizar. La disponibilidad se confirma directamente con Alte Tour.",
+      "imageAlt": "Paisaje ilustrativo de los valles de Capadocia con globos al amanecer",
+      "linkLabel": "Ver el programa completo"
     },
     "en": {
-      "title": "Wine tourism technical tour of Portugal and Spain",
-      "summary": "Teresa Alarcón was part of a wine tourism delegation that made a technical tour of Portugal and Spain.",
-      "body": "Teresa Alarcón took part in a wine tourism delegation that made a technical tour of Portugal and Spain, an international exchange connected to the tourism development of the region.\n\nFedetur highlighted Contur Biobío's work in sustainable wine tourism, which received international recognition.\n\nYou can read the full article on the Fedetur website.",
-      "imageAlt": "Illustrative landscape of the Biobío Region",
-      "linkLabel": "Read the Fedetur article"
+      "title": "Turkey Imbatible 2027: inquiries now open for the May departure",
+      "summary": "A 10-day, 9-night circuit through Istanbul, Cappadocia, Pamukkale and the Aegean, departing from Santiago on May 7, 2027, with a Spanish-speaking guide.",
+      "body": "You can now ask about Turkey Imbatible 2027, our Platinum-category program departing from Santiago on May 7, 2027 and returning on May 18.\n\nThe circuit covers Istanbul, Ankara, Cappadocia, Pamukkale, Selçuk, Izmir or Kuşadası, Chios and Bursa, with Spanish-speaking guidance. Prices start at USD 3,750 per person in a double room, plus a mandatory local fee of USD 5 per person per night, paid at the destination.\n\nReview the day-by-day itinerary, what the program includes and its conditions before requesting a quote. Availability is confirmed directly with Alte Tour.",
+      "imageAlt": "Illustrative landscape of the Cappadocia valleys with hot-air balloons at sunrise",
+      "linkLabel": "See the full program"
     },
     "pt": {
-      "title": "Viagem técnica de enoturismo a Portugal e Espanha",
-      "summary": "Teresa Alarcón fez parte de uma delegação de enoturismo que realizou uma viagem técnica a Portugal e Espanha.",
-      "body": "Teresa Alarcón participou de uma delegação de enoturismo que realizou uma viagem técnica a Portugal e Espanha, uma experiência de intercâmbio internacional ligada ao desenvolvimento turístico do território.\n\nA Fedetur destacou o trabalho da Contur Biobío em enoturismo sustentável, que recebeu um reconhecimento internacional.\n\nVocê pode ler a matéria completa no site da Fedetur.",
-      "imageAlt": "Paisagem ilustrativa da Região do Biobío",
-      "linkLabel": "Ler a matéria da Fedetur"
+      "title": "Turquia Imbatible 2027: consultas abertas para a saída de maio",
+      "summary": "Um circuito de 10 dias e 9 noites por Istambul, Capadócia, Pamukkale e o Egeu, com saída de Santiago em 7 de maio de 2027 e guia de língua espanhola.",
+      "body": "Você já pode consultar sobre o Turquia Imbatible 2027, nosso programa de categoria Platina com saída de Santiago em 7 de maio de 2027 e retorno em 18 de maio.\n\nO circuito percorre Istambul, Ancara, Capadócia, Pamukkale, Selçuk, Izmir ou Kuşadası, Chios e Bursa, com acompanhamento em espanhol. Os valores partem de USD 3.750 por pessoa em quarto duplo, mais uma taxa local obrigatória de USD 5 por pessoa por noite, paga no destino.\n\nConfira o roteiro dia a dia, o que o programa inclui e suas condições antes de pedir um orçamento. A disponibilidade é confirmada diretamente com a Alte Tour.",
+      "imageAlt": "Paisagem ilustrativa dos vales da Capadócia com balões ao amanhecer",
+      "linkLabel": "Ver o programa completo"
     }
   }
 ]

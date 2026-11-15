@@ -19,8 +19,8 @@ server {
     include /etc/letsencrypt/options-ssl-nginx.conf;
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
-    # Imagenes de noticias desde el panel (el pool admite hasta 6 MB).
-    client_max_body_size 8m;
+    # Imagenes de noticias desde el panel: hasta 6 MB por foto y 64 MB por envio (galeria).
+    client_max_body_size 64m;
 
     error_page 404 /404.html;
     add_header X-Content-Type-Options "nosniff" always;

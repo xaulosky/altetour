@@ -578,6 +578,7 @@ export default {
   "Agencia": "Agency",
   "Pronto habrá novedades en esta categoría.": "There will be news in this category soon.",
   "Mientras tanto, puedes conversar con nosotros sobre tu próximo viaje.": "In the meantime, you can talk to us about your next trip.",
+  "Galería de fotos": "Photo gallery",
   "Volver a noticias": "Back to news",
   "SIGUE LEYENDO": "KEEP READING",
   "Más noticias.": "More news.",

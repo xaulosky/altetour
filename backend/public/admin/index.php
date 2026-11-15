@@ -55,14 +55,17 @@ try {
                 if($slug!==''&&!$existing)throw new Problem(404,'Noticia no encontrada.');
                 $item=News::fromForm($_POST,$_FILES,$existing);
                 store()->putNews($item);
+                // Fotos quitadas de la galería o portada reemplazada: se borran si ninguna noticia las usa.
+                if($existing){$inUse=array_merge([],...array_map([News::class,'imagePaths'],store()->news()));foreach(array_diff(News::imagePaths($existing),$inUse) as $path)if($file=News::uploadedFile($path))unlink($file);}
                 redirect('news-edit','Noticia guardada. Para verla en el sitio, exporta news.json y vuelve a publicar.',$item['slug']);
             }
             if($action==='news-delete'){
                 $slug=is_string($_POST['slug']??null)?$_POST['slug']:'';
                 if(($_POST['confirmation']??'')!=='ELIMINAR'||!store()->newsItem($slug))throw new Problem(422,'Para eliminar, escribe ELIMINAR y verifica la noticia.');
-                $image=store()->newsItem($slug)['image'];store()->deleteNews($slug);
-                // Borra la imagen subida si ninguna otra noticia la usa.
-                if(($file=News::uploadedFile($image))&&!array_filter(store()->news(),fn($n)=>$n['image']===$image))unlink($file);
+                $paths=News::imagePaths(store()->newsItem($slug));store()->deleteNews($slug);
+                // Borra las imágenes subidas (portada y galería) que ninguna otra noticia usa.
+                $inUse=array_merge([],...array_map([News::class,'imagePaths'],store()->news()));
+                foreach($paths as $path)if(($file=News::uploadedFile($path))&&!in_array($path,$inUse,true))unlink($file);
                 redirect('news','Noticia eliminada. Exporta news.json y vuelve a publicar para retirarla del sitio.');
             }
             throw new Problem(404,'Acción no disponible.');
@@ -154,6 +157,10 @@ try {
         $body.='<div class="form-columns"><label>Elegir de la biblioteca<select name="image"><option value="__keep">'.($n?'Mantener la imagen actual':'Sin elegir (se usa Biobío)').'</option>';
         foreach(News::LIBRARY as $path=>$label)$body.='<option value="'.e($path).'">'.e($label).'</option>';
         $body.='</select></label><label>O subir una imagen nueva (JPG, PNG o WebP, máx. '.e(round(News::maxUploadBytes()/1048576,1)).' MB)<input type="file" name="image_upload" accept="image/jpeg,image/png,image/webp"></label></div></div>';
+        $gallery=News::gallery($n);
+        $body.='<h3>Galería de fotos</h3><p class="hint">Hasta '.News::GALLERY_MAX.' fotos. Se reducen solas a un tamaño liviano para la web. Para quitar una, márcala y guarda.</p>';
+        if($gallery){$body.='<div class="news-gallery-admin">';foreach($gallery as $g){$prev=News::uploadedFile($g['thumb'])?'/admin/?view=news-image&file='.rawurlencode(basename($g['thumb'])):$g['thumb'];$body.='<label class="news-gallery-item"><img src="'.e($prev).'" alt=""><span><input type="checkbox" name="gallery_remove[]" value="'.e($g['src']).'"> Quitar</span></label>';}$body.='</div>';}
+        $body.='<label>Agregar fotos (puedes elegir varias a la vez · JPG, PNG o WebP, máx. '.e(round(News::maxUploadBytes()/1048576,1)).' MB cada una)<input type="file" name="gallery_upload[]" accept="image/jpeg,image/png,image/webp" multiple></label>';
         foreach(News::LANGS as $lang=>$label){
             $req=$lang==='es';
             $body.='<fieldset class="news-lang"><legend>'.e($label).($req?' · obligatorio':' · opcional').'</legend><div class="form-columns"><label class="wide">Título<input name="'.$lang.'_title" maxlength="160" value="'.$v($lang,'title').'"'.($req?' required':'').'></label><label class="wide">Resumen<textarea name="'.$lang.'_summary" maxlength="400" rows="2"'.($req?' required':'').'>'.$v($lang,'summary').'</textarea></label><label class="wide">Texto (separa los párrafos con una línea en blanco)<textarea name="'.$lang.'_body" maxlength="20000" rows="8"'.($req?' required':'').'>'.$v($lang,'body').'</textarea></label><label>Descripción de la imagen<input name="'.$lang.'_imageAlt" maxlength="200" value="'.$v($lang,'imageAlt').'"></label><label>Texto del enlace<input name="'.$lang.'_linkLabel" maxlength="80" value="'.$v($lang,'linkLabel').'"></label></div></fieldset>';
