@@ -90,7 +90,7 @@ final class Store {
         return $this->json(fn($db)=>$db['leads'][$id]??null);
     }
     public function leads():array {
-        if($this->pdo){$rows=$this->pdo->query('SELECT * FROM leads ORDER BY created_at DESC LIMIT 5000')->fetchAll();return array_map(function($r){$r['data']=json_decode($r['data'],true,512,JSON_THROW_ON_ERROR);return $r;},$rows);}
+        if($this->pdo){$rows=$this->pdo->query('SELECT * FROM leads ORDER BY created_at DESC LIMIT 5000')->fetchAll();return array_map(function($r){$r['data']=json_decode($r['data'],true,512,JSON_THROW_ON_ERROR);$r['is_new']=hash_equals($r['id'],$id);return $r;},$rows);}
         return $this->json(function($db){$rows=array_values($db['leads']);usort($rows,fn($a,$b)=>strcmp($b['created_at'],$a['created_at']));return array_slice($rows,0,5000);});
     }
     public function createLead(string $key,array $data):array {
@@ -104,11 +104,11 @@ final class Store {
             $q=$this->pdo->prepare('SELECT * FROM leads WHERE idempotency_key=?');$q->execute([$key]);$r=$q->fetch();
             if(!$r)throw new RuntimeException('No se pudo recuperar la consulta.');
             if(!hash_equals($r['fingerprint'],$fingerprint))throw new Problem(409,'La solicitud ya fue registrada con otros datos. Recarga el formulario para enviar una consulta distinta.');
-            $r['data']=json_decode($r['data'],true,512,JSON_THROW_ON_ERROR);return $r;
+            $r['data']=json_decode($r['data'],true,512,JSON_THROW_ON_ERROR);$r['is_new']=hash_equals($r['id'],$id);return $r;
         }
         return $this->json(function(&$db)use($key,$fingerprint,$record){
-            foreach($db['leads'] as $old){if($old['idempotency_key']===$key){if(!hash_equals($old['fingerprint'],$fingerprint))throw new Problem(409,'La solicitud ya fue registrada con otros datos. Recarga el formulario.');return $old;}}
-            $db['leads'][$record['id']]=$record;return $record;
+            foreach($db['leads'] as $old){if($old['idempotency_key']===$key){if(!hash_equals($old['fingerprint'],$fingerprint))throw new Problem(409,'La solicitud ya fue registrada con otros datos. Recarga el formulario.');return $old+['is_new'=>false];}}
+            $db['leads'][$record['id']]=$record;return $record+['is_new'=>true];
         },true);
     }
     public function setStatus(string $id,string $status):void {

@@ -10,4 +10,6 @@ return [
         'database' => 'USUARIO_altetour', 'username' => 'USUARIO_alte',
         'password' => 'REEMPLAZAR',
     ],
+    // Aviso por correo de cada consulta nueva (vacío = sin aviso). 'from' debe ser del dominio firmado con DKIM.
+    'notify' => ['to' => '', 'from' => 'avisos@altetour.cl', 'from_name' => 'Alte Tour web', 'site' => 'https://altetour.cl'],
 ];

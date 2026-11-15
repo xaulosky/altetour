@@ -2,7 +2,7 @@
 declare(strict_types=1);
 require dirname(__DIR__).'/_bootstrap.php';
 use Alte\Problem;
-use function Alte\{beginSession,headersPrivate,csrfCheck,rateLimit,jsonResponse,validLead,store};
+use function Alte\{beginSession,headersPrivate,csrfCheck,rateLimit,jsonResponse,validLead,store,notifyLead};
 try {
     headersPrivate();beginSession();$route=$_GET['route']??'';$method=$_SERVER['REQUEST_METHOD'];
     if($route==='csrf'&&$method==='GET'){rateLimit('csrf',120,300);jsonResponse(['token'=>$_SESSION['csrf']]);}
@@ -19,6 +19,8 @@ try {
         $key=$input['idempotency_key']??'';
         if(!is_string($key)||!preg_match('/^[a-zA-Z0-9-]{20,80}$/D',$key))throw new Problem(422,'Recarga el formulario para comenzar una nueva consulta.');
         $record=store()->createLead($key,validLead($input));
+        // Un reintento del mismo formulario no repite el aviso; un fallo de correo no pierde la consulta.
+        if($record['is_new']??false)notifyLead($record);
         jsonResponse(['reference'=>$record['reference']],201);
     }
     if($route==='programs'&&$method==='GET'){
